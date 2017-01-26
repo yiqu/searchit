@@ -4,7 +4,7 @@ An example Angular 2 project using the Github API.
 
 # Live Demo
 
-A live demo can be found here: https://yiqu.github.io/angular2-example-github-users#/
+A live demo can be found here: https://yiqu.github.io/angular2-example-github-users
 
 # How to start
 
