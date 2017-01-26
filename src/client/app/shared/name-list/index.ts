@@ -1,4 +1,4 @@
 /**
- * This barrel file provides the export for the shared NameListService.
+ * This barrel file provides the export for the shared service.
  */
-export * from './name-list.service';
+export * from './github-users.service';

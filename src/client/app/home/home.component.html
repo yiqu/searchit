@@ -1,10 +1,32 @@
-<p>Howdy!!!aa Here's a list of awesome computer scientists. Do you know any others? Add to the list yourself.</p>
+<h2> Search for Users <h3>(Displaying top {{userCount}} of total {{searchResultCount}} results)</h3></h2>
 
-<form (submit)="addName()">
-  <input [(ngModel)]="newName" name="newName" placeholder="Awesome Computer Scientist">
-  <button type="submit">Add</button>
-</form>
+<div class="search-panel">
+  <form (ngSubmit)="onSearchSubmit()" #searchForm="ngForm">
+    <div class="form-group">
+      <md-input-container class="input-container">
+        <input md-input type="text" class="form-control" id="searchLoginInput"
+          required placeholder="Enter a user name. (e.g. tom)" [(ngModel)]="search.login" name="login" 
+          #name="ngModel">
+        <span md-prefix class="search-label">Name:&nbsp;</span>
+      </md-input-container>
+      <button md-raised-button color="primary" type="submit" class="search-button" 
+        [disabled]="!searchForm.form.valid">Search!</button>
+      <span [hidden]="name.valid || name.pristine" class="required-warning-text">
+        A name is required*
+      </span>
+    </div>
+  </form>
 
-<ul>
-  <li *ngFor="let name of names">{{name}}</li>
-</ul>
+  <md-card class="user-cards" *ngFor="let user of users">
+    <md-card-title-group>
+      <img md-card-sm-image [src]="user.avatar_url" alt="">
+      <md-card-title class="card-title">{{user.login}}</md-card-title>
+      <md-card-subtitle>{{user.type}}</md-card-subtitle>
+      
+      <button md-raised-button color="warn" class="details-button"
+        (click)="onUserSelect(user)" mdTooltip="View details">
+          Details
+      </button>
+    </md-card-title-group>
+  </md-card>
+</div>

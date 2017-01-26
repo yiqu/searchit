@@ -2,3 +2,7 @@
   display: block;
   padding: 0 16px;
 }
+
+.card-actions {
+  padding-left: 15px;
+}

@@ -24,7 +24,8 @@
       "node",
       "jasmine",
       "protractor",
-      "systemjs"
+      "systemjs",
+      "hammerjs"
     ]
   },
   "exclude": [

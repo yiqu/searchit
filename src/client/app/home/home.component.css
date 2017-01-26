@@ -3,11 +3,35 @@
   padding: 0 16px;
 }
 
-input {
-  width: 250px;
+.search-label {
+  font-weight: bold; 
 }
 
-ul {
-  list-style-type: none;
-  padding: 0 0 0 8px;
+.search-button {
+  margin-bottom: 10px;
+}
+
+.form-control {
+  color: #808080;
+  font-weight: bold;
+}
+
+.input-container{
+  width: 42.5%;
+}
+
+.required-warning-text {
+  font-size: 12px;
+  font-weight: bold;
+  color: #ff1a1a;
+}
+
+.card-title {
+  max-width: 10px;
+  font-size: 20px;
+}
+
+.details-button {
+  height: 50%;
+  top: 15px;
 }

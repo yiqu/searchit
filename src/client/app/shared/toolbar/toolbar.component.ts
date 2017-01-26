@@ -9,5 +9,17 @@ import { Component } from '@angular/core';
   templateUrl: 'toolbar.component.html',
   styleUrls: ['toolbar.component.css']
 })
-export class ToolbarComponent { }
+export class ToolbarComponent { 
+  // List of buttons on Nav
+  private menuButtons : string[];
+
+  // Buttons content
+  private people : string = "people";
+  private about : string = "about";
+
+  constructor() {
+    this.menuButtons = new Array();
+    this.menuButtons.push(this.people, this.about);
+  }  
+}
 

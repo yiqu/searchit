@@ -1,2 +1,8 @@
-<h1>Angular Seed</h1>
-<div class="more"></div>
+<md-toolbar class="main-nav" color="primary">
+  <h1>Welcome</h1>
+  <ul>
+    <li class="l-left" *ngFor="let button of menuButtons">
+      <a [routerLink]=button md-button class="main-nav-button"> {{button | uppercase}} </a>
+    </li>
+  </ul>
+</md-toolbar>

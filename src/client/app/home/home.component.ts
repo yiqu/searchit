@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NameListService } from '../shared/name-list/name-list.service';
-import { Router } from '@angular/router';
+import { GithubUser } from '../shared/models/github-user.model';
+import { Searchable } from '../shared/models/github-search.model'
+import { GithubUsersService } from '../shared/name-list/github-users.service';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+
 /**
  * This class represents the lazy loaded HomeComponent.
  */
@@ -12,48 +15,53 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  newName: string = '';
   errorMessage: string;
-  names: any[] = [];
+  users: GithubUser[];
+  userCount: number = 0;
+  search: Searchable = {login: ''};
+  searchResultCount: number = 0;
+  //pageNext: any;
+  //pagePrev: any;
 
   /**
    * Creates an instance of the HomeComponent with the injected
-   * NameListService.
-   *
-   * @param {NameListService} nameListService - The injected NameListService.
+   * GithubUsersService, ActivatedRoute, and Router
    */
-  constructor(public nameListService: NameListService) {
-
-  }
+  constructor(public usersService: GithubUsersService, 
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   /**
-   * Get the names OnInit
+   * Get all users OnInit
    */
   ngOnInit() {
-    this.getNames();
+    this.search.login = this.usersService.cache.searchTerm;
+    this.users = this.usersService.cache.searchResult;
+    this.userCount = this.usersService.cache.userDisplayCount;
+    this.searchResultCount = this.usersService.cache.userTotalCount;
   }
+
 
   /**
-   * Handle the nameListService observable
+   * Constructs a URL route for user's detail
    */
-  getNames() {
-    this.nameListService.get()
-      .subscribe(
-        names => this.names = names,
-        error => this.errorMessage = <any>error
-      );
+  onUserSelect(selectedUser: GithubUser) {
+    // constructs a URL of /people/mojombo
+    this.router.navigate(['/people', selectedUser.login]);
   }
 
-  /**
-   * Pushes a new name onto the names array
-   * @return {boolean} false to prevent default form submit behavior to refresh the page.
-   */
-  addName(): boolean {
-    // TODO: implement nameListService.post
-    this.names.push(this.newName);
-    this.newName = '';
-
-    return false;
+  onSearchSubmit() {
+    this.usersService.searchUserByLogin(this.search.login).subscribe(
+      res => {
+        this.users = <GithubUser[]>res.json().items;
+        this.searchResultCount = res.json().total_count;
+      },
+      error => {
+        this.errorMessage = <any>error;
+      },
+      () => {
+        this.userCount = this.users.length;
+      });
   }
-
 }
