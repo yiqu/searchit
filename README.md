@@ -1,6 +1,6 @@
 # Introduction
 
-An example project built with Angular 2 and Material 2 using the Github API.
+An example project built with [https://github.com/angular/angular](Angular 2) and [https://github.com/angular/material2](Material 2) using the Github API.
 
 # Live Demo
 
