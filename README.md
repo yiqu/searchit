@@ -2,28 +2,23 @@
 
 An example Angular 2 project using the Github API.
 
+# Live Demo
+
+A live demo can be found here: https://yiqu.github.io/angular2-example-github-users#/
+
 # How to start
 
 **Note** that this seed project requires node v4.x.x or higher and npm 2.14.7 but in order to be able to take advantage of the complete functionality we **strongly recommend node >=v6.5.0 and npm >=3.10.3**.
 
-In order to start the seed use:
+In order to start the project use:
 
 
 ```bash
 # install the project's dependencies
 $ npm install
-# fast install (via Yarn, https://yarnpkg.com)
-$ yarn install  # or yarn
 
 # watches your files and uses livereload by default
 $ npm start
-# api document for the app
-# npm run build.docs
-
-# generate api documentation
-$ npm run compodoc
-$ npm run serve.compodoc
-
 
 # to start deving with livereload site and coverage as well as continuous testing
 $ npm run start.deving
@@ -41,23 +36,8 @@ $ npm start -- --app bar
 ```
 _Does not rely on any global dependencies._
 
-
-**Notes** 
-- Beware of non-static/side-effectful imports. These cannot be properly optimized. For this reason, even though tree-shaking is taking place the developer still needs to be careful not to include non-static imports that are unnecessary, as those referenced imports will always end up in final bundle. Special attention should be given to RxJs, which makes heavy use of non-static/side-effectful imports: make sure you only add the operators you use, as any added operators will be included in your final production bundle.
-- UMD modules result in code that cannot be properly optimized. For best results, prefer ES6 modules whenever possible. This includes third-party dependencies: if one is published in both UMD and ES6 modules, go with the ES6 modules version.
-- During a production build, CommonJs modules will be automatically converted to ES6 modules. This means you can use them and/or require dependencies that use them without any issues.
-
-
-## Development build and deployment
-
-Run the following:
-
-```bash
-$ docker-compose build
-$ docker-compose up -d
-```
-
 Now open your browser at http://localhost:5555
+
 
 # Configuration
 
