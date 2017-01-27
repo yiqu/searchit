@@ -35,3 +35,11 @@
   height: 50%;
   top: 15px;
 }
+
+.page-links {
+  padding: 0px 0px 15px 7%;
+}
+
+.search-panel {
+  max-width: 100%;
+}

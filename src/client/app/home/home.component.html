@@ -16,17 +16,25 @@
       </span>
     </div>
   </form>
-
-  <md-card class="user-cards" *ngFor="let user of users">
-    <md-card-title-group>
-      <img md-card-sm-image [src]="user.avatar_url" alt="">
-      <md-card-title class="card-title">{{user.login}}</md-card-title>
-      <md-card-subtitle>{{user.type}}</md-card-subtitle>
-      
-      <button md-raised-button color="warn" class="details-button"
-        (click)="onUserSelect(user)" mdTooltip="View details">
-          Details
-      </button>
-    </md-card-title-group>
-  </md-card>
 </div>
+
+<div class="page-links">
+  <button md-button color="primary" (click)="onPageSelect()"><<</button>
+  <button md-button color="primary" (click)="onPageSelect()"><</button>
+  <button md-button color="primary" (click)="onPageSelect()">></button>
+  <button md-button color="primary" (click)="onPageSelect()">>></button>
+</div>
+
+<md-card class="user-cards" *ngFor="let user of users">
+  <md-card-title-group>
+    <img md-card-sm-image [src]="user.avatar_url" alt="">
+    <md-card-title class="card-title">{{user.login}}</md-card-title>
+    <md-card-subtitle>{{user.type}}</md-card-subtitle>
+    
+    <button md-raised-button color="warn" class="details-button"
+      (click)="onUserSelect(user)" mdTooltip="View details">
+        Details
+    </button>
+  </md-card-title-group>
+</md-card>
+

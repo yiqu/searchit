@@ -45,9 +45,16 @@ export class GithubUsersService {
             this.cache.searchResult = <GithubUser[]>res.json().items;
             this.cache.userDisplayCount = res.json().items.length;
             this.cache.userTotalCount = res.json().total_count;
+
+            //console.log(this.parse_link_header(res.headers.get('Link')));
+            //let linkObject = this.parse_link_header(res.headers.get('Link'));
+            //this.nextPageUrl = linkObject.next;
+            //console.log(this.nextPageUrl);
+
             return <any>res;
         }).catch(this.handleError);
   }
+
 
   /**
     * Handle HTTP error
@@ -57,6 +64,26 @@ export class GithubUsersService {
       error.status ? `${error.status} - ${error.statusText}` : 'Server error';
     console.error(errMsg); // log to console instead
     return Observable.throw(errMsg);
+  }
+
+  parse_link_header(header:string) {
+    if (header.length === 0) {
+        throw new Error("input must not be of zero length");
+    }
+    // Split parts by comma
+    let parts = header.split(',');
+    let links:any = {};
+    // Parse each part into a named link
+    for(let i=0; i<parts.length; i++) {
+        let section = parts[i].split(';');
+        if (section.length !== 2) {
+            throw new Error("section could not be split on ';'");
+        }
+        let url = section[0].replace(/<(.*)>/, '$1').trim();
+        let name = section[1].replace(/rel="(.*)"/, '$1').trim();
+        links[name] = url;
+    }
+    return links;
   }
 }
 

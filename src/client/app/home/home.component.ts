@@ -20,8 +20,7 @@ export class HomeComponent implements OnInit {
   userCount: number = 0;
   search: Searchable = {login: ''};
   searchResultCount: number = 0;
-  //pageNext: any;
-  //pagePrev: any;
+
 
   /**
    * Creates an instance of the HomeComponent with the injected
@@ -64,4 +63,20 @@ export class HomeComponent implements OnInit {
         this.userCount = this.users.length;
       });
   }
+
+  onPageSelect() {
+    /*
+    this.usersService.goToNextPage().subscribe(
+      res => {
+        console.log(res.json());
+      },
+      error => {
+        this.errorMessage = <any>error;
+      },
+      () => {
+        
+      });
+      */
+  }
+  
 }
