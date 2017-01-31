@@ -7,6 +7,21 @@ import { GithubUser } from '../models/github-user.model'
 export class SearchCacheable {
     searchResult: GithubUser[];
     searchTerm: string;
-    userDisplayCount: 0;
-    userTotalCount: 0;
+    userDisplayCount: number;
+    userTotalCount: number;
+
+    /**
+     * Constructor for SearchCacheable object.
+     *
+     * @param {GithubUser[]} result - returned search result
+     * @param {string} term - search term 
+     * @param {number} displayCount - results being displayed. Default=0
+     * @param {number} totalCount - total results. Default=0
+     */
+    constructor(result:GithubUser[], term:string, displayCount: number=0, totalCount:number=0){
+        this.searchResult = result;
+        this.searchTerm = term;
+        this.userDisplayCount = displayCount;
+        this.userTotalCount = totalCount;
+    }
 }

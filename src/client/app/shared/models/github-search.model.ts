@@ -1,5 +1,6 @@
 /**
- * Model for a Searchable 
+ * Model for a Searchable. Purpose is to store the login 
+ * that is being searched.
  */
 
 export interface Searchable {

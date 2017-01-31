@@ -7,7 +7,7 @@ import { Response } from '@angular/http';
 import 'rxjs/add/operator/switchMap';
 
 /**
- * This class represents a Github user's details
+ * This represents a Github user's details component.
  */
 @Component({
     moduleId: module.id,

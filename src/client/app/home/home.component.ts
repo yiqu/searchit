@@ -3,6 +3,7 @@ import { GithubUser } from '../shared/models/github-user.model';
 import { Searchable } from '../shared/models/github-search.model'
 import { GithubUsersService } from '../shared/name-list/github-users.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { LinkHeader } from '../shared/models/github-link-header';
 
 /**
  * This class represents the lazy loaded HomeComponent.
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
   userCount: number = 0;
   search: Searchable = {login: ''};
   searchResultCount: number = 0;
-
+  page: LinkHeader;
 
   /**
    * Creates an instance of the HomeComponent with the injected
@@ -39,6 +40,9 @@ export class HomeComponent implements OnInit {
     this.users = this.usersService.cache.searchResult;
     this.userCount = this.usersService.cache.userDisplayCount;
     this.searchResultCount = this.usersService.cache.userTotalCount;
+    if(this.usersService.pagination) {
+      this.page = this.usersService.pagination;
+    }
   }
 
 
@@ -61,22 +65,32 @@ export class HomeComponent implements OnInit {
       },
       () => {
         this.userCount = this.users.length;
+        this.page = this.usersService.pagination;
+        this.errorMessage = null;
       });
   }
 
-  onPageSelect() {
-    /*
-    this.usersService.goToNextPage().subscribe(
+  onPageSelect(direction:string) {
+    let url:string = this.usersService.pagination[direction],
+      matches = url.match(/\d+$/);
+    if (matches) {
+      this.usersService.currentPageNumber = +matches[0];
+    }
+    
+
+    this.usersService.pageNavigation(this.usersService.pagination[direction]).subscribe(
       res => {
-        console.log(res.json());
+        this.users = <GithubUser[]>res.json().items;
+        this.searchResultCount = res.json().total_count;
       },
       error => {
         this.errorMessage = <any>error;
       },
       () => {
-        
+        this.userCount = this.users.length;
+        this.page = this.usersService.pagination;
+        this.errorMessage = null;
       });
-      */
   }
   
 }

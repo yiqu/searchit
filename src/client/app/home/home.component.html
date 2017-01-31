@@ -14,15 +14,19 @@
       <span [hidden]="name.valid || name.pristine" class="required-warning-text">
         A name is required*
       </span>
+      <span class="required-warning-text" *ngIf="errorMessage">
+        Error: Last operation failed due to {{errorMessage}}
+      </span>
     </div>
   </form>
 </div>
 
-<div class="page-links">
-  <button md-button color="primary" (click)="onPageSelect()"><<</button>
-  <button md-button color="primary" (click)="onPageSelect()"><</button>
-  <button md-button color="primary" (click)="onPageSelect()">></button>
-  <button md-button color="primary" (click)="onPageSelect()">>></button>
+<div class="page-links" *ngIf="this.usersService.pagination">
+  <button [disabled]="!page.first" md-raised-button color="primary" (click)="onPageSelect('first')">First Page</button>
+  <button [disabled]="!page.prev" md-raised-button color="primary" (click)="onPageSelect('prev')">Previous Page</button>
+  <button [disabled]="!page.next" md-raised-button color="primary" (click)="onPageSelect('next')">Next Page</button>
+  <button [disabled]="!page.last" md-raised-button color="primary" (click)="onPageSelect('last')">Last Page</button>
+  <h3>(Page {{this.usersService.currentPageNumber}} of {{this.usersService.lastPageNumber}})</h3> 
 </div>
 
 <md-card class="user-cards" *ngFor="let user of users">

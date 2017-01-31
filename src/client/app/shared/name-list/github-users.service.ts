@@ -3,6 +3,8 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { GithubUser } from '../models/github-user.model'
 import { SearchCacheable } from '../models/search-cache';
+import { LinkHeader } from '../models/github-link-header';
+//import { Subject} from 'rxjs/Rx';
 
 /**
  * This singleton service provides the Github users service. 
@@ -12,31 +14,43 @@ export class GithubUsersService {
 
   // The base URL for github API
   private githubBaseApi: string = "https://api.github.com";
-
-  cache: SearchCacheable = new SearchCacheable();
+  // tmp object for holding pagination urls
+  private tmpLinkObject: Object; 
+  // object for holding SearchForm's values. Prevent form values being erased after
+  // viewing another component
+  public cache: SearchCacheable = new SearchCacheable([], "");
+  // LinkHeader object for holding pagination urls
+  public pagination: LinkHeader;
+  // values used to display Page current of total.
+  public lastPageNumber: number;
+  public currentPageNumber: number;
 
   /**
-   * Creates a new GithubUsersService with the injected Http.
+   * Constructor to create a new GithubUsersService with the injected Http.
+   * 
+   * @param {Http} http - injected http component
    */
   constructor(private http: Http) {
-    this.cache.searchResult = [];
-    this.cache.searchTerm = "";
-    this.cache.userDisplayCount = 0;
-    this.cache.userTotalCount = 0;
   }
 
   /**
-   * Returns an Observable for user details.
+   * Creates an Observable to make http request for a user's details
+   * 
+   * @param {string} login - the user's login name
+   * @return {Response} res - a user's detail
    */
   getUserDetail(login: string): Observable<any> {
     return this.http.get(this.githubBaseApi + '/users' + '/' + login)
         .map((res: Response) => {
-            return <any>res;
+            return <Response>res;
         }).catch(this.handleError);
   }
 
   /**
-   * Returns an Observable for users
+   * Creates an Observable to make http request for searching by user's login 
+   *
+   * @param {string} login - the user's login name
+   * @return {Response} res - array of users 
    */
   searchUserByLogin(login: string): Observable<any> {
     return this.http.get(this.githubBaseApi + '/search/users' + '?q=' + login + '+in:login' + '+type:user')
@@ -45,20 +59,47 @@ export class GithubUsersService {
             this.cache.searchResult = <GithubUser[]>res.json().items;
             this.cache.userDisplayCount = res.json().items.length;
             this.cache.userTotalCount = res.json().total_count;
-
-            //console.log(this.parse_link_header(res.headers.get('Link')));
-            //let linkObject = this.parse_link_header(res.headers.get('Link'));
-            //this.nextPageUrl = linkObject.next;
-            //console.log(this.nextPageUrl);
-
-            return <any>res;
+            if(res.headers.get('Link') !== null){
+                this.tmpLinkObject =  this.parse_link_header(res.headers.get('Link'));
+                this.pagination = new LinkHeader(this.tmpLinkObject);
+                this.lastPageNumber = this.pagination["last"]===undefined?0:+this.pagination["last"].match(/\d+$/)[0];
+                //console.log(this.lastPageNumber);
+                this.currentPageNumber = 1;
+            } else {
+                this.pagination = null;
+            }
+            return <Response>res;
         }).catch(this.handleError);
   }
 
+  /**
+   * Creates an Observable for navigating pagination. The url is passed in based on the direction
+   * of pagination.
+   *
+   * @param {string} url - full url string to call
+   * @return {Response} res - array of users 
+   */
+  pageNavigation(url: string): Observable<any> {
+    return this.http.get(url)
+        .map((res: Response) => {
+    
+            this.cache.searchResult = <GithubUser[]>res.json().items;
+            this.cache.userDisplayCount = this.cache.searchResult.length;
+            this.cache.userTotalCount = res.json().total_count;    
+
+            this.tmpLinkObject =  this.parse_link_header(res.headers.get('Link'));
+            this.pagination.setLinks(this.tmpLinkObject);
+
+            return <Response>res;
+        }).catch(this.handleError);
+  }
 
   /**
-    * Handle HTTP error
-    */
+   * Handle HTTP error
+   * 
+   * @param {any} error - error
+   * @return {Observable} any - error message 
+   */
   private handleError (error: any) {
     let errMsg = (error.message) ? error.message :
       error.status ? `${error.status} - ${error.statusText}` : 'Server error';
@@ -66,7 +107,14 @@ export class GithubUsersService {
     return Observable.throw(errMsg);
   }
 
-  parse_link_header(header:string) {
+
+  /**
+   * Creates an object 
+   * 
+   * @param {string} header - header link string that contains next, prev, first and last urls
+   * @return {Object} links - The object with pagination information.
+   */
+  parse_link_header(header: string) {
     if (header.length === 0) {
         throw new Error("input must not be of zero length");
     }
