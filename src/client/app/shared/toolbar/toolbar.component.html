@@ -4,5 +4,8 @@
     <li class="l-left" *ngFor="let button of menuButtons">
       <a [routerLink]=button md-button class="main-nav-button"> {{button | uppercase}} </a>
     </li>
+    <li class="l-left">
+      <button md-button (click)=login()>Log in</button>
+    </li>
   </ul>
 </md-toolbar>

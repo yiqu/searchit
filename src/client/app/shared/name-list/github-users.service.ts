@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers, RequestOptions, URLSearchParams, RequestMethod } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { GithubUser } from '../models/github-user.model'
 import { SearchCacheable } from '../models/search-cache';
 import { LinkHeader } from '../models/github-link-header';
-//import { Subject} from 'rxjs/Rx';
+import { Subject} from 'rxjs/Rx';
 
 /**
  * This singleton service provides the Github users service. 
@@ -33,6 +33,7 @@ export class GithubUsersService {
   constructor(private http: Http) {
   }
 
+
   /**
    * Creates an Observable to make http request for a user's details
    * 
@@ -45,6 +46,7 @@ export class GithubUsersService {
             return <Response>res;
         }).catch(this.handleError);
   }
+
 
   /**
    * Creates an Observable to make http request for searching by user's login 
@@ -63,7 +65,6 @@ export class GithubUsersService {
                 this.tmpLinkObject =  this.parse_link_header(res.headers.get('Link'));
                 this.pagination = new LinkHeader(this.tmpLinkObject);
                 this.lastPageNumber = this.pagination["last"]===undefined?0:+this.pagination["last"].match(/\d+$/)[0];
-                //console.log(this.lastPageNumber);
                 this.currentPageNumber = 1;
             } else {
                 this.pagination = null;
@@ -71,6 +72,7 @@ export class GithubUsersService {
             return <Response>res;
         }).catch(this.handleError);
   }
+
 
   /**
    * Creates an Observable for navigating pagination. The url is passed in based on the direction
@@ -93,6 +95,48 @@ export class GithubUsersService {
             return <Response>res;
         }).catch(this.handleError);
   }
+
+
+  /**
+   * Post to Github Auth API to retrieve user's auth token
+   *
+   * @param {string} url full url string to call
+   * @param {string} client_id 
+   * @param {string} client_secret 
+   * @param {code} code randomized code generated to check for validity
+   * @return {Response} res response containing auth token
+   */
+  getAuthToken(url: string, client_id: string, client_secret: string, code: string): Observable<any> {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    //headers.append('Accept', 'application/json')
+    //headers.append('Access-Control-Allow-Origin', '*')
+    let data = new URLSearchParams();
+    data.append('client_id', client_id);
+    data.append('client_secret', client_secret);
+    data.append('code', code)
+    let options = new RequestOptions({ method: 'POST',
+        headers: headers, body: null, url: url, search: data});
+    
+    return this.http.post(url, null, options)
+        .map((res: Response) => {
+            console.log('res '+res);
+            return <Response> res;
+        }).catch(this.handleError);
+  }
+
+
+  /**
+   * Create a Subject to be subscribed for user's logged in status
+   */
+  //isUserLoggedIn: Subject<boolean> = new Subject<boolean>();
+  isUserLoggedIn: boolean = false;
+
+  /**
+   * the cleanred up url 
+   */
+  redirectedUrlWithCodeAndState: string = '';
+
 
   /**
    * Handle HTTP error

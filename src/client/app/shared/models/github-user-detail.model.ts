@@ -14,8 +14,11 @@ export interface GithubUserDetail {
     public_repos: number;
     public_gists: number;
     followers: number;
+    following: number;
     html_url: string;
     repos_url: string;
     type: string;
     created_at: Date;
+    organizations_url: string;
+    updated_at: Date;
 }

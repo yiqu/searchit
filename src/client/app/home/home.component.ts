@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GithubUser } from '../shared/models/github-user.model';
 import { Searchable } from '../shared/models/github-search.model'
 import { GithubUsersService } from '../shared/name-list/github-users.service';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { LinkHeader } from '../shared/models/github-link-header';
 
 /**
@@ -71,8 +71,8 @@ export class HomeComponent implements OnInit {
   }
 
   onPageSelect(direction:string) {
-    let url:string = this.usersService.pagination[direction],
-      matches = url.match(/\d+$/);
+    let url: string = this.usersService.pagination[direction],
+        matches = url.match(/\d+$/); //get the number at the end of the url
     if (matches) {
       this.usersService.currentPageNumber = +matches[0];
     }
