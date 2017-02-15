@@ -827,6 +827,7 @@ p {
 .user-cards {
   width: 50%;
   margin-bottom: 5px;
+  background-color: #f2f2f2;
 }
 
 h3 {
