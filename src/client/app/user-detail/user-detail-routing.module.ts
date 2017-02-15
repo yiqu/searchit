@@ -4,7 +4,7 @@ import { UserDetailComponent } from './user-detail.component';
 
 
 const userDetailRoutes: Routes = [
-    { path: 'people/:login', component: UserDetailComponent },
+    { path: 'search/:login', component: UserDetailComponent },
 ];
 
 @NgModule({

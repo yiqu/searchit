@@ -57,7 +57,7 @@ export class UserDetailComponent implements OnInit {
         // Pass along the hero id if available
         // so that the UserListComponent can select that hero with css.
         let userLogin = this.user ? this.user.login : null;
-        this.router.navigate(['/people', { lastDetail: userLogin }]);
+        this.router.navigate(['/search', { lastViewed: userLogin }]);
     }
 
 }

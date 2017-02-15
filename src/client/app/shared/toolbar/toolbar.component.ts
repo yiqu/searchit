@@ -14,12 +14,12 @@ export class ToolbarComponent {
   private menuButtons : string[];
 
   // Buttons content
-  private people : string = "people";
+  private search : string = "search";
   private about : string = "about";
 
   constructor() {
     this.menuButtons = new Array();
-    this.menuButtons.push(this.people, this.about);
+    this.menuButtons.push(this.search, this.about);
   }  
 }
 

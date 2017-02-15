@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { GithubUser } from '../models/github-user.model'
 import { SearchCacheable } from '../models/search-cache';
 import { LinkHeader } from '../models/github-link-header';
+import { Searchable } from '../models/github-search.model'
 //import { Subject} from 'rxjs/Rx';
 
 /**
@@ -25,6 +26,7 @@ export class GithubUsersService {
   public lastPageNumber: number;
   public currentPageNumber: number;
 
+  public hideResultInfo: boolean = true;
   /**
    * Constructor to create a new GithubUsersService with the injected Http.
    * 
@@ -47,30 +49,39 @@ export class GithubUsersService {
   }
 
   /**
-   * Creates an Observable to make http request for searching by user's login 
+   * Creates an Observable to make http request for search
    *
    * @param {string} login - the user's login name
+   * @param {string}
+   * @param {string}
+   * @param {number}
+   * 
    * @return {Response} res - array of users 
    */
-  searchUserByLogin(login: string): Observable<any> {
-    return this.http.get(this.githubBaseApi + '/search/users' + '?q=' + login + '+in:login' + '+type:user')
-        .map((res: Response) => {
-            this.cache.searchTerm = login;
-            this.cache.searchResult = <GithubUser[]>res.json().items;
-            this.cache.userDisplayCount = res.json().items.length;
-            this.cache.userTotalCount = res.json().total_count;
-            if(res.headers.get('Link') !== null){
-                this.tmpLinkObject =  this.parse_link_header(res.headers.get('Link'));
-                this.pagination = new LinkHeader(this.tmpLinkObject);
-                this.lastPageNumber = this.pagination["last"]===undefined?0:+this.pagination["last"].match(/\d+$/)[0];
-                //console.log(this.lastPageNumber);
-                this.currentPageNumber = 1;
-            } else {
-                this.pagination = null;
-            }
-            return <Response>res;
+  search(login: string, searchType: string, searchFilter: string, followers: number): Observable<any> {
+    // any amount of followers: /search/users?q=tom+in:login+type:user
+    let searchTypeParam: string = searchType === "anyType" ? "" : "+type:" + searchType;
+    let followerFilter: string = searchFilter === "noFilter" ? "" : "+followers:" + searchFilter + followers;
+
+    return this.http.get(this.githubBaseApi + '/search/users' + '?q=' + login + '+in:login' 
+        + searchTypeParam + followerFilter)
+            .map((res: Response) => {
+                this.cache.searchTerm = login;
+                this.cache.searchResult = <GithubUser[]>res.json().items;
+                this.cache.userDisplayCount = res.json().items.length;
+                this.cache.userTotalCount = res.json().total_count;
+                if(res.headers.get('Link') !== null){
+                    this.tmpLinkObject =  this.parse_link_header(res.headers.get('Link'));
+                    this.pagination = new LinkHeader(this.tmpLinkObject);
+                    this.lastPageNumber = this.pagination["last"]===undefined?0:+this.pagination["last"].match(/\d+$/)[0];
+                    //console.log(this.lastPageNumber);
+                    this.currentPageNumber = 1;
+                } else {
+                    this.pagination = null;
+                }
+                return <Response>res;
         }).catch(this.handleError);
-  }
+    }
 
   /**
    * Creates an Observable for navigating pagination. The url is passed in based on the direction

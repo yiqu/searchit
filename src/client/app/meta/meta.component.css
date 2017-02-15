@@ -1,0 +1,24 @@
+:host {
+  float: right;
+  width: 40%;
+  margin-right: 5%;
+
+}
+
+.history {
+  background-color: #f2f2f2;
+}
+
+.history-menu {
+  float: right;
+  top: -53px;
+}
+
+.menu-item {
+  display: block;
+}
+
+.menu-icon {
+  float: left;
+  margin-top: -2px;
+}
