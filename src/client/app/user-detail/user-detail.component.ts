@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { GithubUserDetail } from '../shared/models/github-user-detail.model'
-import { GithubUsersService } from '../shared/name-list/github-users.service';
+import { GithubUsersService } from '../shared/services/github-users.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Response } from '@angular/http';
 

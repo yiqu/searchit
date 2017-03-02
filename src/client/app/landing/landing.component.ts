@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { GithubUser } from '../shared/models/github-user.model';
 import { Searchable } from '../shared/models/github-search.model'
-import { GithubUsersService } from '../shared/name-list/github-users.service';
+import { GithubUsersService } from '../shared/services/github-users.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { LinkHeader } from '../shared/models/github-link-header';
+import { LinkHeader } from '../shared/models/github-pagination-header';
 
 /**
- * This class represents the lazy loaded HomeComponent.
+ * Landing component class 
+ * 
  */
 @Component({
   moduleId: module.id,
-  selector: 'sd-home',
-  templateUrl: 'home.component.html',
-  styleUrls: ['home.component.css'],
+  selector: 'sd-landing',
+  templateUrl: 'landing.component.html',
+  styleUrls: ['landing.component.css'],
 })
-export class HomeComponent implements OnInit {
+export class LandingComponent implements OnInit {
 
   errorMessage: string;
   users: GithubUser[];
@@ -41,7 +42,7 @@ export class HomeComponent implements OnInit {
     followerFilter: this.followerFilter[0].value, followers: 10};
 
   /**
-   * Creates an instance of the HomeComponent with the injected
+   * Creates an instance of the LandingComponent with the injected
    * GithubUsersService, ActivatedRoute, and Router
    */
   constructor(public usersService: GithubUsersService, 

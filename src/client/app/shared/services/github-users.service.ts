@@ -3,7 +3,7 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { GithubUser } from '../models/github-user.model'
 import { SearchCacheable } from '../models/search-cache';
-import { LinkHeader } from '../models/github-link-header';
+import { LinkHeader } from '../models/github-pagination-header';
 import { Searchable } from '../models/github-search.model'
 //import { Subject} from 'rxjs/Rx';
 

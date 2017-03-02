@@ -1,12 +1,9 @@
 <md-card class="search-banner"> 
-  <h2> Search  
-    <md-slide-toggle
-      class="save-history-toggle"
-      color="primary"
-      [(ngModel)]="saveHistory">
-      History
-    </md-slide-toggle>
-  </h2>
+  <md-card-title> Search </md-card-title>
+  <md-card-subtitle> Search for users or organizations on Github</md-card-subtitle>
+  <md-slide-toggle class="save-history-toggle" color="primary" mdTooltip="Show past searches"
+    [(ngModel)]="saveHistory"> History
+  </md-slide-toggle>
 </md-card>
 
 <div class="search-progress-bar" [hidden]="hideProgressBar">

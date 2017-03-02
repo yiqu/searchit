@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GithubUsersService } from '../shared/name-list/github-users.service';
+import { GithubUsersService } from '../shared/services/github-users.service';
 import { UserDetailComponent } from './user-detail.component'
 import { UserDetailRoutingModule } from './user-detail-routing.module'
 import { SharedModule } from '../shared/shared.module';

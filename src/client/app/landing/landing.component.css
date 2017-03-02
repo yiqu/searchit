@@ -6,12 +6,15 @@
 .search-label {
   font-weight: bold; 
 }
+
 .search-banner {
   width: 95%;
   margin-top: 20px;
   margin-bottom: 20px;
   background-color: #f2f2f2;
+  height: 105px;
 }
+
 .search-button {
   margin-bottom: 10px;
 }
@@ -58,6 +61,7 @@
 
 .save-history-toggle {
   float: right;
+  margin-top: -37px;
 }
 
 .search-icon {
