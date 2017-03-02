@@ -18,7 +18,7 @@
   <form (ngSubmit)="onSearchSubmit()" #searchForm="ngForm">
 
       <md-input-container class="input-container">
-        <input md-input type="text" class="form-control" id="searchLoginInput"
+        <input mdInput type="text" class="form-control" id="searchLoginInput"
           required placeholder="Enter a {{search.type | ViewValuePipe | lowercase }} name. (e.g. {{search.type | placeholderType}})" 
           [(ngModel)]="search.login" name="login" 
           #name="ngModel">
@@ -48,7 +48,7 @@
           </md-option>
         </md-select>
         <md-input-container class="select-follower-count">
-          <input (keypress)="onlyNumberKey($event)" md-input type="number" 
+          <input (keypress)="onlyNumberKey($event)" mdInput type="number" 
             [hidden]="search.followerFilter==='noFilter'" placeholder="Count" 
             [(ngModel)]="search.followers" name="follower-count">
         </md-input-container>

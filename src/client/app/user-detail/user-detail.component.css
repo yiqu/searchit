@@ -6,3 +6,7 @@
 .card-actions {
   padding-left: 15px;
 }
+
+.user-detail-avatar {
+  width: 40px;
+}

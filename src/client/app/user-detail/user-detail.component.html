@@ -3,7 +3,7 @@
 <div *ngIf="user">
   <md-card class="user-cards">
     <md-card-header>
-      <img md-card-avatar [src]="user.avatar_url">
+      <img md-card-avatar class="user-detail-avatar" [src]="user.avatar_url">
       <md-card-title><b>{{user.login}}</b> ({{user.name}}) - {{user.followers}} followers</md-card-title>
       <md-card-subtitle>{{user.company}} <b>|</b> {{user.location}}</md-card-subtitle>
     </md-card-header>
