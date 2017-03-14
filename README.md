@@ -4,7 +4,7 @@ An example project built with [Angular 2](https://github.com/angular/angular) an
 
 # Live Demo
 
-A live demo can be found here: https://yiqu.github.io/angular2-example-github-users
+A live demo can be found here: https://yiqu.github.io/searchit
 
 # How to start
 
