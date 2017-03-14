@@ -52,7 +52,7 @@ export class GithubUsersService {
    * Creates an Observable to make http request for search
    *
    * @param {string} login - the user's login name
-   * @param {string}
+   * @param {string} searchType - user or org.
    * @param {string}
    * @param {number}
    * 
