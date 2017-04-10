@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { APP_BASE_HREF } from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
@@ -12,7 +13,7 @@ import { SharedModule } from './shared/shared.module';
 import { UserDetailModule } from './user-detail/user-detail.module'
 
 @NgModule({
-  imports: [BrowserModule, HttpModule, MaterialModule.forRoot(),
+  imports: [BrowserModule, BrowserAnimationsModule, HttpModule, MaterialModule.forRoot(),
     AppRoutingModule, AboutModule, LandingModule, SharedModule.forRoot(), UserDetailModule],
   declarations: [AppComponent],
   providers: [{
