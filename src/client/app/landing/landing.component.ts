@@ -53,7 +53,7 @@ export class LandingComponent implements OnInit {
   /**
    * Get all users OnInit
    */
-  ngOnInit() {
+  ngOnInit(): void {
     this.search.login = this.usersService.cache.searchTerm;
     this.search.type = this.usersService.cache.searchTermType;
     this.search.followerFilter = this.usersService.cache.searchTermFollowerFilter;
@@ -73,12 +73,12 @@ export class LandingComponent implements OnInit {
   /**
    * Constructs a URL route for user's detail
    */
-  onUserSelect(selectedUser: GithubUser) {
+  onUserSelect(selectedUser: GithubUser): void {
     // constructs a URL of /search/mojombo
     this.router.navigate(['/search', selectedUser.login]);
   }
 
-  onSearchSubmit() {
+  onSearchSubmit(): void {
     // set the cache so we don't lose it when coming back to the page
     this.usersService.cache.searchTermType = this.search.type;
     this.usersService.cache.searchTermFollowerCount = this.search.followers;
@@ -104,7 +104,7 @@ export class LandingComponent implements OnInit {
       });
   }
 
-  onPageSelect(direction: string) {
+  onPageSelect(direction: string): void {
     let url: string = this.usersService.pagination[direction],
         matches = url.match(/\d+$/);
     // show progress bar
@@ -128,7 +128,7 @@ export class LandingComponent implements OnInit {
       });
   }
 
-  onlyNumberKey(event: any) {
+  onlyNumberKey(event: any): boolean {
       return (event.charCode == 8 || event.charCode == 0) ? 
         null : event.charCode >= 48 && event.charCode <= 57;
   }
