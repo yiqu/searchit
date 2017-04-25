@@ -61,7 +61,7 @@ export class GithubUsersService {
   search(login: string, searchType: string, searchFilter: string, followers: number): Observable<any> {
     // any amount of followers: /search/users?q=tom+in:login+type:user
     let searchTypeParam: string = searchType === "anyType" ? "" : "+type:" + searchType;
-    let followerFilter: string = searchFilter === "noFilter" ? "" : "+followers:" + searchFilter + followers;
+    let followerFilter: string = searchFilter === "noFilter" ? "" : "+followers:" + searchFilter + (followers === null ? 0 : followers);
 
     return this.http.get(this.githubBaseApi + '/search/users' + '?q=' + login + '+in:login' 
         + searchTypeParam + followerFilter)

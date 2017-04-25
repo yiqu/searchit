@@ -48,7 +48,7 @@
           </md-option>
         </md-select>
         <md-input-container class="select-follower-count">
-          <input (keypress)="onlyNumberKey($event)" mdInput type="text" 
+          <input (keypress)="onlyNumberKey($event)" mdInput type="number" 
             [hidden]="search.followerFilter==='noFilter'" placeholder="Count" 
             [(ngModel)]="search.followers" name="follower-count">
         </md-input-container>
@@ -58,12 +58,12 @@
 
 <div [hidden]="hideResultInfo"><h3>Displaying {{userCount}} of total {{searchResultCount}} results</h3></div>
 
-<div class="page-links" *ngIf="this.usersService.pagination">
+<div class="page-links" *ngIf="this.userService.pagination">
   <button [disabled]="!page.first" md-raised-button color="primary" (click)="onPageSelect('first')">First Page</button>
   <button [disabled]="!page.prev" md-raised-button color="primary" (click)="onPageSelect('prev')">Previous Page</button>
   <button [disabled]="!page.next" md-raised-button color="primary" (click)="onPageSelect('next')">Next Page</button>
   <button [disabled]="!page.last" md-raised-button color="primary" (click)="onPageSelect('last')">Last Page</button>
-  <h3>(Page {{this.usersService.currentPageNumber}} of {{this.usersService.lastPageNumber}})</h3> 
+  <h3>(Page {{this.userService.currentPageNumber}} of {{this.userService.lastPageNumber}})</h3> 
 </div>
 
 <sd-meta [hidden]="!saveHistory"></sd-meta>

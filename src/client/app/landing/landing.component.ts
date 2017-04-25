@@ -6,7 +6,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { LinkHeader } from '../shared/models/github-pagination-header';
 
 /**
- * Landing component class 
+ * Landing component class.
  * 
  */
 @Component({
@@ -38,34 +38,39 @@ export class LandingComponent implements OnInit {
     {value: '<', viewValue: 'Less than'}
   ];
 
-  search: Searchable = {login: '', type: this.loginTypes[0].value, 
-    followerFilter: this.followerFilter[0].value, followers: 10};
+  /** 
+   * The initital Searchable object, which holds the searchable fields. On default
+   * it is empty with 10 followers.
+   */
+  search: Searchable = {
+    login: '', 
+    type: this.loginTypes[0].value, 
+    followerFilter: this.followerFilter[0].value, 
+    followers: 10
+  };
 
   /**
    * Creates an instance of the LandingComponent with the injected
    * GithubUsersService, ActivatedRoute, and Router
    */
-  constructor(public usersService: GithubUsersService, 
-    private route: ActivatedRoute,
-    private router: Router
-  ) {}
+  constructor(public userService: GithubUsersService, private router: Router){}
 
   /**
-   * Get all users OnInit
+   * Fill in the fields on page load. This will keep the last searched information.
    */
   ngOnInit(): void {
-    this.search.login = this.usersService.cache.searchTerm;
-    this.search.type = this.usersService.cache.searchTermType;
-    this.search.followerFilter = this.usersService.cache.searchTermFollowerFilter;
-    this.search.followers = this.usersService.cache.searchTermFollowerCount;
-    this.users = this.usersService.cache.searchResult;
+    this.search.login = this.userService.cache.searchTerm;
+    this.search.type = this.userService.cache.searchTermType;
+    this.search.followerFilter = this.userService.cache.searchTermFollowerFilter;
+    this.search.followers = this.userService.cache.searchTermFollowerCount;
+    this.users = this.userService.cache.searchResult;
     // users count for current page
-    this.userCount = this.usersService.cache.userDisplayCount;
+    this.userCount = this.userService.cache.userDisplayCount;
     // total users total from the query
-    this.searchResultCount = this.usersService.cache.userTotalCount;
-    this.hideResultInfo = this.usersService.hideResultInfo;
-    if(this.usersService.pagination) {
-      this.page = this.usersService.pagination;
+    this.searchResultCount = this.userService.cache.userTotalCount;
+    this.hideResultInfo = this.userService.hideResultInfo;
+    if(this.userService.pagination) {
+      this.page = this.userService.pagination;
     }
   }
 
@@ -74,45 +79,51 @@ export class LandingComponent implements OnInit {
    * Constructs a URL route for user's detail
    */
   onUserSelect(selectedUser: GithubUser): void {
-    // constructs a URL of /search/mojombo
+    // constructs a URL of /search/yiqu
     this.router.navigate(['/search', selectedUser.login]);
   }
 
   onSearchSubmit(): void {
     // set the cache so we don't lose it when coming back to the page
-    this.usersService.cache.searchTermType = this.search.type;
-    this.usersService.cache.searchTermFollowerCount = this.search.followers;
-    this.usersService.cache.searchTermFollowerFilter = this.search.followerFilter;
+    this.userService.cache.searchTermType = this.search.type;
+    this.userService.cache.searchTermFollowerCount = this.search.followers;
+    this.userService.cache.searchTermFollowerFilter = this.search.followerFilter;
     this.hideProgressBar = false;
+
+    // if user didnt select a number of followers and the filter is shown, then set it to 0 as default
+    if (this.search.followerFilter !== "noFilter" && this.search.followers == null) {
+      this.search.followers = 0;
+    }
     // start subscribe
-    this.usersService.search(this.search.login, this.search.type, 
+    this.userService.search(this.search.login, this.search.type, 
       this.search.followerFilter, this.search.followers).subscribe(
       res => {
         this.users = <GithubUser[]>res.json().items;
         this.searchResultCount = res.json().total_count;
       },
       error => {
+        this.hideProgressBar = true;
         this.errorMessage = <any>error;
       },
       () => {
         this.hideResultInfo = false;
-        this.usersService.hideResultInfo = this.hideResultInfo;
+        this.userService.hideResultInfo = this.hideResultInfo;
         this.userCount = this.users.length;
-        this.page = this.usersService.pagination;
+        this.page = this.userService.pagination;
         this.errorMessage = null;
         this.hideProgressBar = true;
       });
   }
 
   onPageSelect(direction: string): void {
-    let url: string = this.usersService.pagination[direction],
+    let url: string = this.userService.pagination[direction],
         matches = url.match(/\d+$/);
     // show progress bar
     this.hideProgressBar = false;
     if (matches) {
-      this.usersService.currentPageNumber = +matches[0];
+      this.userService.currentPageNumber = +matches[0];
     }
-    this.usersService.pageNavigation(this.usersService.pagination[direction]).subscribe(
+    this.userService.pageNavigation(this.userService.pagination[direction]).subscribe(
       res => {
         this.users = <GithubUser[]>res.json().items;
         this.searchResultCount = res.json().total_count;
@@ -122,7 +133,7 @@ export class LandingComponent implements OnInit {
       },
       () => {
         this.userCount = this.users.length;
-        this.page = this.usersService.pagination;
+        this.page = this.userService.pagination;
         this.errorMessage = null;
         this.hideProgressBar = true;
       });
