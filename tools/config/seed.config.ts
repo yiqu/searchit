@@ -128,7 +128,7 @@ export class SeedConfig {
    * `index.html`.
    * @type {string}
    */
-  APP_TITLE = 'GitHub Search - Search Tool for GitHub';
+  APP_TITLE = 'Searchit - Search Tool for GitHub';
 
 	/**
    * Tracking ID.
