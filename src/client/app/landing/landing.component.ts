@@ -116,8 +116,9 @@ export class LandingComponent implements OnInit {
   }
 
   onPageSelect(direction: string): void {
-    let url: string = this.userService.pagination[direction],
-        matches = url.match(/\d+$/);
+    let url: string = this.userService.pagination[direction]
+    // regex to grab the page number out of the URL
+    let matches = url.match(/\d+$/);
     // show progress bar
     this.hideProgressBar = false;
     if (matches) {
@@ -130,6 +131,7 @@ export class LandingComponent implements OnInit {
       },
       error => {
         this.errorMessage = <any>error;
+        this.hideProgressBar = true;
       },
       () => {
         this.userCount = this.users.length;

@@ -128,13 +128,13 @@ export class SeedConfig {
    * `index.html`.
    * @type {string}
    */
-  APP_TITLE = 'Welcome';
+  APP_TITLE = 'GitHub Search - Search Tool for GitHub';
 
 	/**
    * Tracking ID.
    * @type {string}
    */
-  GOOGLE_ANALYTICS_ID = 'UA-XXXXXXXX-X';
+  GOOGLE_ANALYTICS_ID = 'UA-97989015-1';
 
   /**
    * The base folder of the applications source files.
