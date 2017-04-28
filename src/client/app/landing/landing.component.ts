@@ -55,6 +55,7 @@ export class LandingComponent implements OnInit {
    */
   constructor(public userService: GithubUsersService, private router: Router){}
 
+
   /**
    * Fill in the fields on page load. This will keep the last searched information.
    */
@@ -83,6 +84,10 @@ export class LandingComponent implements OnInit {
     this.router.navigate(['/search', selectedUser.login]);
   }
 
+
+  /**
+   * Send the values from the form to GithubUsersService for the GET call
+   */
   onSearchSubmit(): void {
     // set the cache so we don't lose it when coming back to the page
     this.userService.cache.searchTermType = this.search.type;
@@ -115,6 +120,11 @@ export class LandingComponent implements OnInit {
       });
   }
 
+
+  /**
+   * Page navigation send to GithubUsersService.
+   * Possible directions are: Prev, Next, First and Last.  
+   */
   onPageSelect(direction: string): void {
     let url: string = this.userService.pagination[direction]
     // regex to grab the page number out of the URL
@@ -141,6 +151,13 @@ export class LandingComponent implements OnInit {
       });
   }
 
+
+  /**
+   * Return true if key is a number, false otherwise.
+   * 
+   * @param {any} event - key press event
+   * @return {boolean} true if event's key press is a number
+   */
   onlyNumberKey(event: any): boolean {
       return (event.charCode == 8 || event.charCode == 0) ? 
         null : event.charCode >= 48 && event.charCode <= 57;
