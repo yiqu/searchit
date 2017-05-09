@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MdDialog } from '@angular/material';
 
 /**
- * This class represents the lazy loaded AboutComponent.
+ * This class represents the AboutComponent.
  */
 @Component({
   moduleId: module.id,
