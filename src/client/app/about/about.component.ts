@@ -16,8 +16,9 @@ export class AboutComponent {
   toDoAuth: boolean = false;
   toDoSaveSearch: boolean = false;
   toDoUserDetail: boolean = false;
-
   slideValue: number = 40;
+  // Set from seed.config.ts
+  lastBuiltDate: string = '<%= LAST_BUILT_DATE %>';
 
   constructor(public dialog: MdDialog){}
 
