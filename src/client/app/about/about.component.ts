@@ -20,8 +20,23 @@ export class AboutComponent {
   // Set from seed.config.ts
   lastBuiltDate: string = '<%= LAST_BUILT_DATE %>';
 
+
+  /**
+   * Creates an instance of the AboutComponent with the injected
+   * MdDialog as required by Material for dialogs
+   *
+   * @param {MdDialog} dialog - instance of dialog for Material
+   * 
+   */
   constructor(public dialog: MdDialog){}
 
+
+  /**
+   * Method to calculate the slider bar percentage and movements
+   *
+   * @param {string} box - checkbox name that was checked or unchecked
+   * 
+   */
   checkBox(box: string) {
     switch (box) {
     case "toDoAuth":
@@ -36,13 +51,21 @@ export class AboutComponent {
     } 
   }
 
-  subscribe() {
+
+  /**
+   * Method to pop up the dialog box when user clicks Subscribe button
+   * 
+   */
+  subscribeMailingList() {
     this.dialog.open(EmailSubscribDialog);
   }
 }
 
 
-
+/**
+ * Component needed by Material to use dialogs
+ * 
+ */
 @Component({
   moduleId: module.id,
   selector: 'email-subscribe-dialog',
