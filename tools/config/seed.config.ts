@@ -27,8 +27,8 @@ export const BUILD_TYPES: BuildType = {
  */
 export class SeedConfig {
 
-  LAST_BUILT_DATE = "5/9/2017";
-  
+  LAST_BUILT_DATE = "5/11/2017";
+
   /**
    * The port where the application will run.
    * The default port is `5555`, which can be overriden by the  `--port` flag when running `npm start`.
