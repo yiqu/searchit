@@ -52,6 +52,10 @@ export class LandingComponent implements OnInit {
   /**
    * Creates an instance of the LandingComponent with the injected
    * GithubUsersService, ActivatedRoute, and Router
+   * 
+   * @param {GithubUsersService} userService - injected GithubUsersService instance
+   * @param {Router} router - injected Router instance
+   * 
    */
   constructor(public userService: GithubUsersService, private router: Router){}
 
@@ -78,6 +82,9 @@ export class LandingComponent implements OnInit {
 
   /**
    * Constructs a URL route for user's detail
+   * 
+   * @param {GithubUser} selectedUser - github user to search for
+   * 
    */
   onUserSelect(selectedUser: GithubUser): void {
     // constructs a URL of /search/yiqu
@@ -123,7 +130,10 @@ export class LandingComponent implements OnInit {
 
   /**
    * Page navigation send to GithubUsersService.
-   * Possible directions are: Prev, Next, First and Last.  
+   * Possible directions are: Prev, Next, First and Last.
+   * 
+   * @param {string} direction - pagination direction
+   * 
    */
   onPageSelect(direction: string): void {
     let url: string = this.userService.pagination[direction]
