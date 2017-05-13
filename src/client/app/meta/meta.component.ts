@@ -12,13 +12,32 @@ import { MdSnackBar } from '@angular/material';
 })
 export class MetaComponent { 
 
+
+  /**
+   * Constructor
+   * 
+   * @param {MdSnackBar} snackBar - injected Material Snackbar comp.
+   * 
+   */
   constructor(public snackBar: MdSnackBar) {}
 
-  exportExcel(message: string, action: string) {
+
+  /**
+   * Snackbar action for exporting to Excel
+   * 
+   * @param {string} message - message displayed
+   * @param {string} action - action taken when clicked
+   */
+  exportExcel(message: string, action: string): void {
     this.snackBar.open("Excel-1", "Download", {duration: 5000});
   }
 
-  clearAll(message: string, action: string) {
+
+  /**
+   * Snackbar action for clear all
+   * 
+   */
+  clearAll(): void {
     this.snackBar.open("Cleared all history", "Undo", {duration: 5000});
   }
 }
