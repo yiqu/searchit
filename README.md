@@ -36,7 +36,7 @@ $ npm start -- --app bar
 ```
 _Does not rely on any global dependencies._
 
-Now open your browser at http://localhost:5555
+Now open your browser at http://localhost:5555 (auto-open first time).
 
 
 # Configuration
