@@ -13,14 +13,27 @@ import { SharedModule } from './shared/shared.module';
 import { UserDetailModule } from './user-detail/user-detail.module'
 
 @NgModule({
-  imports: [BrowserModule, BrowserAnimationsModule, HttpModule, MaterialModule.forRoot(),
-    AppRoutingModule, AboutModule, LandingModule, SharedModule.forRoot(), UserDetailModule],
-  declarations: [AppComponent],
+  imports: [
+    BrowserModule, 
+    BrowserAnimationsModule, 
+    HttpModule, 
+    MaterialModule,
+    AppRoutingModule, 
+    AboutModule, 
+    LandingModule, 
+    SharedModule.forRoot(), 
+    UserDetailModule
+  ],
+
+  declarations: [
+    AppComponent
+  ],
+
   providers: [{
     provide: APP_BASE_HREF,
     useValue: '<%= APP_BASE %>'
   }],
-  bootstrap: [AppComponent]
 
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
