@@ -4,6 +4,7 @@ import { UserDetailComponent } from './user-detail.component';
 
 
 const userDetailRoutes: Routes = [
+    // Path will match search/yiqu
     { path: 'search/:login', component: UserDetailComponent },
 ];
 
