@@ -15,5 +15,4 @@ import { SharedModule } from '../shared/shared.module';
   exports: [UserDetailComponent],
   providers: [GithubUsersService]
 })
-
 export class UserDetailModule { }
