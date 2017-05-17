@@ -131,9 +131,9 @@ export class GithubUsersService {
     }
     // Split parts by comma
     let parts = header.split(',');
-    let links:any = {};
+    let links: any = {};
     // Parse each part into a named link
-    for(let i=0; i<parts.length; i++) {
+    for (let i=0; i<parts.length; i++) {
         let section = parts[i].split(';');
         if (section.length !== 2) {
             throw new Error("section could not be split on ';'");
