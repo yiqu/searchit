@@ -1,5 +1,6 @@
 import { GithubUser } from '../models/github-user.model'
 
+
 /**
  * Class to represent a SearchCacheable object
  * Used to "save" a user's search result and search inputs

@@ -18,7 +18,7 @@
 
       <md-input-container class="input-container">
         <input mdInput type="text" class="form-control" id="searchLoginInput"
-          required placeholder="Enter a {{search.type | ViewValuePipe | lowercase }} name. (e.g. {{search.type | placeholderType}})" 
+          required placeholder="Enter {{search.type | ViewValue | lowercase }} name. (e.g. {{search.type | placeholderType}})" 
           [(ngModel)]="search.login" name="login" 
           #name="ngModel">
         <span class="search-label"></span>
