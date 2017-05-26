@@ -53,8 +53,8 @@ export class GithubUsersService {
    *
    * @param {string} login - the user's login name
    * @param {string} searchType - user or org.
-   * @param {string}
-   * @param {number}
+   * @param {string} searchFilter - greater than or less than
+   * @param {number} followers - number of followers
    * 
    * @return {Response} res - array of users 
    */
