@@ -27,7 +27,7 @@ export const BUILD_TYPES: BuildType = {
  */
 export class SeedConfig {
 
-  LAST_BUILT_DATE = "5/24/2017";
+  LAST_BUILT_DATE = "5/26/2017";
 
   /**
    * The port where the application will run.
