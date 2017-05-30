@@ -9,7 +9,10 @@ import { RouterModule } from '@angular/router';
        */
     ], {useHash:true})
   ],
-  exports: [RouterModule]
+  
+  exports: [
+    RouterModule
+  ]
 })
 export class AppRoutingModule { }
 

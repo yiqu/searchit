@@ -12,6 +12,10 @@ import './operators';
 })
 export class AppComponent {
 
+  /**
+   * Constructor
+   * 
+   */
   constructor() {
     console.log('Environment config', Config);
   }

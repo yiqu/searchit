@@ -12,6 +12,9 @@ const userDetailRoutes: Routes = [
   imports: [
     RouterModule.forChild(userDetailRoutes)
   ],
-  exports: [RouterModule]
+  
+  exports: [
+    RouterModule
+  ]
 })
 export class UserDetailRoutingModule { }

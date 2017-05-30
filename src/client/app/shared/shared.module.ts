@@ -10,10 +10,23 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
  */
 
 @NgModule({
-  imports: [CommonModule, RouterModule, MaterialModule],
-  declarations: [ToolbarComponent],
-  exports: [ToolbarComponent, MaterialModule,
-    CommonModule, FormsModule, RouterModule]
+  imports: [
+    CommonModule, 
+    RouterModule, 
+    MaterialModule
+  ],
+
+  declarations: [
+    ToolbarComponent
+  ],
+
+  exports: [
+    ToolbarComponent, 
+    MaterialModule,
+    CommonModule, 
+    FormsModule, 
+    RouterModule
+  ]
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders {

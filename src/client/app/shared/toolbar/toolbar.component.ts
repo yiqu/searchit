@@ -17,6 +17,10 @@ export class ToolbarComponent {
   private search : string = "search";
   private about : string = "about";
 
+  /**
+   * Constructor
+   * 
+   */
   constructor() {
     this.menuButtons = new Array();
     this.menuButtons.push(this.search, this.about);
