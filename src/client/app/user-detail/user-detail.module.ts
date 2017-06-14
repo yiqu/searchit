@@ -10,9 +10,19 @@ import { SharedModule } from '../shared/shared.module';
  * SharedModule is imported which will bring in MaterialModule
  */
 @NgModule({
-  imports: [CommonModule, UserDetailRoutingModule, SharedModule],
-  declarations: [UserDetailComponent],
-  exports: [UserDetailComponent],
-  providers: [GithubUsersService]
+  imports: [
+    CommonModule, 
+    UserDetailRoutingModule, 
+    SharedModule
+  ],
+  declarations: [
+    UserDetailComponent
+  ],
+  exports: [
+    UserDetailComponent
+  ],
+  providers: [
+    GithubUsersService
+  ]
 })
 export class UserDetailModule { }
