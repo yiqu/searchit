@@ -4,6 +4,7 @@ Github Search. Search for users or organizations of Github. Live demo: https://y
 
 ## Fork and Run
 
+Install Angular-CLI `npm install -g @angular/cli`
 Run `ng serve` , navigate to `localhost:4200`
 
 ## Build
