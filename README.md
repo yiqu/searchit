@@ -1,6 +1,6 @@
 # Searchit
 
-Github Search. Search for users or organizations of Github. Live demo: https://yiqu.github.io/searchit/
+Search for users or organizations of Github. Live demo: https://yiqu.github.io/searchit/
 
 ## Fork and Run
 
