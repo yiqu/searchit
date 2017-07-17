@@ -1,8 +1,10 @@
 # Searchit
 
-Github Search. Search for users or organizations of Github. Live demo: https://yiqu.github.io/searchit/
+Search for users or organizations of Github. Live demo: https://yiqu.github.io/searchit/
 
 ## Fork and Run
+
+Install Angular-CLI `npm install -g @angular/cli`
 
 Run `ng serve` , navigate to `localhost:4200`
 
