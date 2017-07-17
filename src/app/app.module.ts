@@ -7,8 +7,10 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { AboutModule } from './about/about.module';
-import { SearchModule } from './search/search.module';
 import { LandingModule } from './landing/landing.module';
+import { SearchModule } from './search/search.module';
+import { ToolbarModule } from './shared/toolbar/toolbar.module';
+
 import 'hammerjs';
 
 @NgModule({
@@ -21,7 +23,8 @@ import 'hammerjs';
     AppRoutingModule,
     BrowserModule,
     LandingModule,
-    SearchModule
+    SearchModule,
+    ToolbarModule
   ],
 
   providers: [],
