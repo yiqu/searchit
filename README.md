@@ -4,11 +4,11 @@ Search for users or organizations of Github. Live demo: https://yiqu.github.io/s
 
 ## Fork and Run
 
-Install Angular-CLI `npm install -g @angular/cli`.
+Install Angular-CLI `npm install -g @angular/cli`
 
 `npm install` in project.
 
-Run `ng serve` , navigate to `localhost:4200`.
+Run `ng serve` , navigate to `localhost:4200`
 
 ## Build
 
