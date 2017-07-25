@@ -6,6 +6,8 @@ Search for users or organizations of Github. Live demo: https://yiqu.github.io/s
 
 Install Angular-CLI `npm install -g @angular/cli`
 
+`npm install`
+
 Run `ng serve` , navigate to `localhost:4200`
 
 ## Build
