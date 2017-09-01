@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-
+/**
+ * About component class.
+ * 
+ */
 @Component({
   moduleId: module.id,
   selector: 'about',

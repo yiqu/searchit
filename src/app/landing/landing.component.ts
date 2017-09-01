@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 
-
+/**
+ * Landing component class.
+ * 
+ */
 @Component({
   moduleId: module.id,
   selector: 'landing',
