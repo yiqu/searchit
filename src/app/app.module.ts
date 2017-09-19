@@ -10,6 +10,7 @@ import { AboutModule } from './about/about.module';
 import { LandingModule } from './landing/landing.module';
 import { SearchModule } from './search/search.module';
 import { ToolbarModule } from './shared/toolbar/toolbar.module';
+import { FooterModule } from './shared/footer/footer.module';
 
 import 'hammerjs';
 
@@ -24,7 +25,8 @@ import 'hammerjs';
     BrowserModule,
     LandingModule,
     SearchModule,
-    ToolbarModule
+    ToolbarModule,
+    FooterModule
   ],
 
   providers: [],
