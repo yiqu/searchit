@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { SearchComponent } from './search/search.component';
 import { LandingComponent } from './landing/landing.component';
+import { NotFoundComponent } from './404/404.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'search',
     component: SearchComponent,
+  },
+  {
+    path: '**',
+    component: NotFoundComponent,
   }
 ];
 

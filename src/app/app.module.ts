@@ -11,6 +11,7 @@ import { LandingModule } from './landing/landing.module';
 import { SearchModule } from './search/search.module';
 import { ToolbarModule } from './shared/toolbar/toolbar.module';
 import { FooterModule } from './shared/footer/footer.module';
+import { NotFoundModule } from './404/404.module';
 
 import 'hammerjs';
 
@@ -26,7 +27,8 @@ import 'hammerjs';
     LandingModule,
     SearchModule,
     ToolbarModule,
-    FooterModule
+    FooterModule,
+    NotFoundModule
   ],
 
   providers: [],
