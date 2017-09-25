@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+
 /**
- * About component class.
+ * 404 component class.
  * 
  */
 @Component({
@@ -11,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./404.component.css']
 })
 export class NotFoundComponent implements OnInit {
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 }
