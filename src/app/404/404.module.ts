@@ -4,7 +4,7 @@ import { NotFoundComponent } from './404.component';
 
 
 /**
- * Module for About page. 
+ * Module for 404 component. 
  * 
  */
 @NgModule({
@@ -20,7 +20,6 @@ import { NotFoundComponent } from './404.component';
     NotFoundComponent
   ],
 
-  providers: [
-  ]
+  providers: []
 })
 export class NotFoundModule { }
