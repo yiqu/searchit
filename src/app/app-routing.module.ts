@@ -5,6 +5,7 @@ import { SearchComponent } from './search/search.component';
 import { LandingComponent } from './landing/landing.component';
 import { NotFoundComponent } from './404/404.component';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -28,9 +29,11 @@ const routes: Routes = [
     imports: [
         RouterModule.forRoot(routes)
     ],
+  
     exports: [
         RouterModule
     ],
+  
     declarations: []
 })
 export class AppRoutingModule { }
