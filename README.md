@@ -1,6 +1,6 @@
 # Searchit
 
-Search for users or organizations of Github. 
+Search for users and organizations of Github. 
 
 Live demo: https://yiqu.github.io/searchit/
 
