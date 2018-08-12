@@ -1,6 +1,8 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <h1>{{toolbarTitle}}</h1>
+    <a class="main-toolbar-link" [routerLink]="['/search']" [routerLinkActive]="'router-active'">
+      {{toolbarTitle}}
+    </a>
 
     <span class="toolbar-spacer"></span>
 

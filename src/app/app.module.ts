@@ -1,12 +1,16 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutingModule } from './app-routing.module';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { ToolbarModule } from './shared/toolbar/toolbar.module';
 
+// App Modules
+import { ToolbarModule } from './shared/toolbar/toolbar.module';
+import { NotFoundModule } from './404/404.module'
+import { LandingModule } from './landing/landing.module';
 
 /**
- * Main app module
+ * Main app modules
  */
 @NgModule({
   declarations: [
@@ -16,7 +20,10 @@ import { ToolbarModule } from './shared/toolbar/toolbar.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    ToolbarModule
+    ToolbarModule,
+    LandingModule,
+    NotFoundModule,
+    AppRoutingModule
   ],
 
   providers: [

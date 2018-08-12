@@ -6,6 +6,11 @@
   margin-left: 20px;
 }
 
+.main-toolbar-link {
+  font-size: 20px;
+  text-decoration: none;
+  color: #fff;
+}
 
 /* Material buttons override */
 .mat-button.btn-small {
