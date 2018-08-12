@@ -1,0 +1,13 @@
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.toolbar-icon-spacer {
+  margin-left: 20px;
+}
+
+
+/* Material buttons override */
+.mat-button.btn-small {
+  min-width: 10px;
+}
