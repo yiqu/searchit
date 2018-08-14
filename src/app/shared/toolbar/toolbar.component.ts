@@ -31,6 +31,7 @@ export class ToolbarComponent implements OnInit {
       },
       (error) => {
         console.log("error")
+        this.ts.setTitle(environment.pageTitle);
       },
       () => {
         console.log("done");
