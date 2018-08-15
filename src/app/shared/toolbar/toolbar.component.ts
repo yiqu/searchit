@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { HttpParams, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { UserAuthService } from '../../service/user-auth.service';
 import { environment } from '../../../environments/environment';
 import { User } from '../../models/user/user.model';
@@ -25,9 +26,8 @@ export class ToolbarComponent implements OnInit {
    */
   ngOnInit() {
     this.uas.getUser().subscribe(
-      (res: User) => {
-        console.log(res);
-        this.userInfo = res;
+      (res: HttpResponse<User>) => {
+        this.userInfo = res.body;
       },
       (error) => {
         console.log("error")

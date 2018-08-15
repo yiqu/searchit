@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpResponse, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, take, retry, tap } from 'rxjs/operators';
 import { ApiService } from './base-api.service';
@@ -20,7 +19,7 @@ export class UserAuthService {
    * Create an obs for current user info
    * @returns Observable
    */
-  public getUser (): Observable<User> {
+  public getUser (): Observable<HttpResponse<User>> {
     return this.as.get("/user/login.json");
   }
 
