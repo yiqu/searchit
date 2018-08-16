@@ -1,6 +1,6 @@
 {
   "name": "searchit",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Search for projects, users, and repos on Github.",
   "repository": {
     "type": "git",
