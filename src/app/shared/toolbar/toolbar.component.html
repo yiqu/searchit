@@ -10,9 +10,13 @@
       <mat-icon class="search-icon">search</mat-icon>
     </button>
 
-
-    <button mat-button class="btn-small">
-      <mat-icon class="account-icon">account_circle</mat-icon>
+    <button mat-button [matMenuTriggerFor]="menuComp?.menu" class="btn-small">
+      <mat-icon class="account-icon">{{userLoggedIn ? 'face' : 'account_circle'}}</mat-icon>
     </button>
+
+    <toolbar-user-menu #userMenu [userInfo]="userInfo" [menuYPosition]="menuYPosition"
+      [menuOverlap]="menuOverlap">
+    </toolbar-user-menu>
+
   </mat-toolbar-row>
 </mat-toolbar>

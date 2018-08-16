@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  pageTitle: " | Github Search (DEV)"
+  pageTitle: " | Github Search (DEV)",
+  httpDelay: 2000
 };
 
 /*
