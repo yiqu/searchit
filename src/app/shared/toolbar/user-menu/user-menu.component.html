@@ -1,14 +1,24 @@
 <mat-menu #userMenu [yPosition]="menuYPosition" [overlapTrigger]="menuOverlap">
-  <button mat-menu-item>
-    <mat-icon>dialpad</mat-icon>
-    <span>Redial</span>
+  <span mat-menu-item disabled>
+    <span>{{uas.userInfo.userName ? uas.userInfo.userName : "Loading..."}}</span>
+  </span>
+  <button *ngIf="uas.userLoggedIn" mat-menu-item>
+    <mat-icon>email</mat-icon>
+    <span>{{uas.userInfo.userEmail}}</span>
   </button>
-  <button mat-menu-item disabled>
-    <mat-icon>voicemail</mat-icon>
-    <span>Check voicemail</span>
+  <button *ngIf="uas.userLoggedIn" mat-menu-item>
+    <mat-icon>
+      <i class="material-icons md-dark">perm_identity</i>
+    </mat-icon>
+    <span>Settings</span>
   </button>
-  <button mat-menu-item>
-    <mat-icon>notifications_off</mat-icon>
-    <span>Disable alerts</span>
+  <button (click)="userLoginToggle()" mat-menu-item 
+    [disabled]="uas.userLogInToggleButtonText === Btext.BUTTON_TEXTS.LOGGING_IN">
+    <mat-icon>
+      <i class="material-icons md-dark" 
+        [ngClass]="{'md-inactive': uas.userLogInToggleButtonText === Btext.BUTTON_TEXTS.LOGGING_IN}">
+        {{uas.userLoggedIn ? 'trending_flat' : 'vpn_key'}}</i>
+    </mat-icon>
+    <span>{{uas.userLogInToggleButtonText}}</span>
   </button>
 </mat-menu>

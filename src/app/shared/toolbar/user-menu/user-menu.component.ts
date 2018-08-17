@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, OnChanges, SimpleChange, ViewChild } from '@angular/core';
 import { MatMenu } from '@angular/material';
 import { User } from '../../../models/user/user.model';
+import { UserAuthService } from '../../../service/user-auth.service';
+import * as BTexts from '../../../shared/display-texts/texts';
 
 @Component({
   selector: 'toolbar-user-menu',
@@ -10,30 +12,36 @@ import { User } from '../../../models/user/user.model';
 
 export class UserMenuComponent implements OnChanges {
 
-  @Input()
-  menuYPosition: string;
-
-  @Input()
-  menuOverlap: boolean;
-
-  @Input()
-  userInfo: User;
+  // Menu option for Y position
+  @Input() menuYPosition: string;
+  // Menu option for overlap
+  @Input() menuOverlap: boolean;
 
   @ViewChild('userMenu') 
   menu: MatMenu;
 
+  userName: string;
+  userEmail: string;
+  Btext: any = BTexts;
+
   /**
    * Constructor
    */
-  constructor() {}
+  constructor(public uas: UserAuthService) {
+    console.log(this.uas.userInfo);
+  }
 
   /**
    * On changes
    * @param changes 
    */
   ngOnChanges(changes: {[propKey: string]: SimpleChange}) { 
-    console.log("changes: ",changes)
-    console.log(this.userInfo)
   }
 
+  /**
+   * Toggle user log in
+   */
+  userLoginToggle(): void {
+    this.uas.toggleUserLogin();
+  }
 }

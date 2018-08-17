@@ -19,10 +19,8 @@ export class ToolbarComponent implements OnInit {
   menuComp: UserMenuComponent;
 
   toolbarTitle: string = "Github Search";
-  userInfo: User = new User();
   menuYPosition: string = "below";
   menuOverlap: boolean = false;
-  userLoggedIn: boolean = false;
 
   /**
    * Constructor 
@@ -34,37 +32,8 @@ export class ToolbarComponent implements OnInit {
 
   /**
    * On toolbar init
-   * 1) Display user login info.
    */
   ngOnInit() {
-    this.uas.getUser().subscribe(
-      (res: HttpResponse<User>) => {
-        if (res.status === 200) {
-          this.setUserAccount(res.body);  
-        }
-      },
-      (error) => {
-        console.log("error")
-        this.setUserLoggedIn(false);
-        this.updatePageTitle(this.userInfo);
-      },
-      () => {
-        this.setUserLoggedIn(true);
-        this.updatePageTitle(this.userInfo);
-      }
-    )
-  }
-
-  setUserAccount(user: User): void {
-    this.userInfo = user;
-  }
-
-  updatePageTitle(user?: User): void {
-    this.ts.setTitle(this.userInfo.userName + environment.pageTitle);
-  }
-
-  setUserLoggedIn(logged: boolean): void {
-    this.userLoggedIn = logged;
   }
 
 }
