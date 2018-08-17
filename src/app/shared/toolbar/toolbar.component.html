@@ -11,7 +11,7 @@
     </button>
 
     <button mat-button [matMenuTriggerFor]="menuComp?.menu" class="btn-small">
-      <mat-icon class="account-icon">{{userLoggedIn ? 'face' : 'account_circle'}}</mat-icon>
+      <mat-icon class="account-icon">{{uas.userLoggedIn ? 'face' : 'account_circle'}}</mat-icon>
     </button>
 
     <toolbar-user-menu #userMenu [menuYPosition]="menuYPosition"

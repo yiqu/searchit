@@ -27,7 +27,7 @@ export class ToolbarComponent implements OnInit {
    * @param uas injected UserAuthService
    * @param ts 
    */
-  constructor(private uas: UserAuthService, private ts: Title) {
+  constructor(public uas: UserAuthService, private ts: Title) {
   }
 
   /**
