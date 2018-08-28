@@ -16,3 +16,7 @@
 .mat-button.btn-small {
   min-width: 10px;
 }
+
+.toolbar-top {
+  background-color: #3c4146;
+}

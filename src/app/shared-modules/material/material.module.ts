@@ -7,6 +7,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatIconModule } from '@angular/material/icon';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 /**
  * All Material modules to be used in this app
@@ -20,7 +21,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatListModule,
     MatStepperModule,
     MatTreeModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressBarModule
   ],
 
   exports: [
@@ -31,7 +33,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatListModule,
     MatStepperModule,
     MatTreeModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressBarModule
   ],
 })
 export class MaterialModules { }

@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <mat-toolbar-row>
+  <mat-toolbar-row class="toolbar-top">
     <a class="main-toolbar-link" [routerLink]="['/search']" [routerLinkActive]="'router-active'">
       {{toolbarTitle}}
     </a>
@@ -20,3 +20,4 @@
 
   </mat-toolbar-row>
 </mat-toolbar>
+<mat-progress-bar *ngIf="false" [mode]="'indeterminate'" [color]="'primary'"></mat-progress-bar>
