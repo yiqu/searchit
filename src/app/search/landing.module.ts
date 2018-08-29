@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { LandingComponent } from './landing.component';
 
 /**
- * 404 Module
+ * Landing Component Module
  */
 @NgModule({
   imports: [],

@@ -12,6 +12,21 @@
   color: #fff;
 }
 
+.nav-item-link {
+  color: #fff;
+  font-weight: 600;
+  padding-left: 25px;
+  line-height: 21px;
+  text-decoration: none;
+  text-decoration-line: none;
+  text-decoration-style: solid;
+} 
+
+.nav-item-link:hover {
+  color: #a6a6a6;
+}
+
+
 /* Material buttons override */
 .mat-button.btn-small {
   min-width: 10px;
