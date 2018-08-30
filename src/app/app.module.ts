@@ -9,7 +9,6 @@ import { ApiService } from './service/base-api.service';
 // App Modules
 import { ToolbarModule } from './shared/toolbar/toolbar.module';
 import { NotFoundModule } from './404/404.module'
-import { LandingModule } from './search/landing.module';
 
 /**
  * Main app modules
@@ -24,7 +23,6 @@ import { LandingModule } from './search/landing.module';
     BrowserAnimationsModule,
     HttpClientModule,
     ToolbarModule,
-    LandingModule,
     NotFoundModule,
     // routing module always last 
     AppRoutingModule

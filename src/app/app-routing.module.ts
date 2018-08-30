@@ -1,18 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './404/404.component';
-import { LandingComponent } from './search/landing.component';
 
- //Routes for app.
+
+ //Root routes for app
 const routes: Routes = [
   {
     path: 'search',
-    component: LandingComponent
+    loadChildren: './search/search.module#SearchModule',
+    //data: { preload: true }
   },
-  //{
-   // path: 'about', // Lazy loaded
-   // loadChildren: './about/about.module#AboutModule'
-  //},
   { 
     path: '', 
     redirectTo: '/search', 

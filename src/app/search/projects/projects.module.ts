@@ -8,7 +8,8 @@ import { ProjectSearchComponent } from './projects.component';
 
   imports: [],
   
-  exports: [],
+  exports: [
+  ],
   
   providers: [],
 })

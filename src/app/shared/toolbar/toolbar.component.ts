@@ -32,9 +32,9 @@ export class ToolbarComponent implements OnInit {
    * @param ts 
    */
   constructor(public uas: UserAuthService, private ts: Title) {
-    let projects = new NavItem("projects", "active", "Projects");
-    let users = new NavItem("users", "active", "Users");
-    let gists = new NavItem("gists", "active", "Gists");
+    let projects = new NavItem(["search", "projects"], "active", "Projects");
+    let users = new NavItem(["search", "users"], "active", "Users");
+    let gists = new NavItem(["search", "gists"], "active", "Gists");
     this.toolbarNavItems = [projects, users, gists];
   }
 
