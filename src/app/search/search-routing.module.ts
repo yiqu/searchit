@@ -13,24 +13,31 @@ const searchRoutes: Routes = [
   {
     path: '',
     component: SearchHomeComponent,
+    data: {
+      pageTitle: 'Search'
+    },
     children: [
       {
         path: 'projects',
         component: ProjectSearchComponent,
+        data: {
+          pageTitle: 'Projects'
+        }
       },
       {
         path: 'users',
         component: UserSearchComponent,
+        data: {
+          pageTitle: 'Users'
+        }
       },
       {
         path: 'gists',
         component: GistSearchComponent,
+        data: {
+          pageTitle: 'Gists'
+        }
       },
-      //{
-      //  path: '',
-       // redirectTo: '1',
-      //  component: CrisisDetailComponent
-      //}
     ]
   }
 ];

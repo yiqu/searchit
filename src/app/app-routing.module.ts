@@ -8,7 +8,6 @@ const routes: Routes = [
   {
     path: 'search',
     loadChildren: './search/search.module#SearchModule',
-    //data: { preload: true }
   },
   { 
     path: '', 

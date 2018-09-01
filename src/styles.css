@@ -2,7 +2,7 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css?family=Poppins|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Poppins|Roboto|Open+Sans');
 
 /* Global Properties */
 html, body {
@@ -21,8 +21,16 @@ html, body {
 }
 
 * {
-  font-family: Roboto, sans-serif;
   font-size: 14px;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
 }
 
 .med-font {
