@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TitleService } from '../../service/title.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'projects-search',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ProjectSearchComponent implements OnInit {
-  constructor() { }
+  constructor(private ts: TitleService, private route: ActivatedRoute) { 
+      this.ts.setAppTitle(this.route.snapshot.data.pageTitle);
+    }
 
-  ngOnInit() { }
+  ngOnInit() {
+   }
 }

@@ -1,12 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { HttpParams, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { UserAuthService } from '../../service/user-auth.service';
 import { environment } from '../../../environments/environment';
 import { User } from '../../models/user/user.model';
 import { UserMenuComponent } from './user-menu/user-menu.component';
 import { NavItem } from '../nav-item.model';
-
+import { ActivatedRoute, Router } from '@angular/router';
+import { TitleService } from '../../service/title.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -31,7 +31,8 @@ export class ToolbarComponent implements OnInit {
    * @param uas injected UserAuthService
    * @param ts 
    */
-  constructor(public uas: UserAuthService, private ts: Title) {
+  constructor(public uas: UserAuthService, private ts: TitleService, 
+    private router: Router, private route: ActivatedRoute) {
     let projects = new NavItem(["search", "projects"], "active", "Projects");
     let users = new NavItem(["search", "users"], "active", "Users");
     let gists = new NavItem(["search", "gists"], "active", "Gists");
@@ -42,6 +43,11 @@ export class ToolbarComponent implements OnInit {
    * On toolbar init
    */
   ngOnInit() {
+  }
+
+  goToSearchHome() {
+    this.router.navigateByUrl("/search");
+    this.ts.setAppTitle("Search Home");
   }
 
 }

@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row class="toolbar-top">
-    <a class="main-toolbar-link" [routerLink]="'/'">{{toolbarTitle}}</a>
+    <a class="main-toolbar-link" (click)="goToSearchHome()">{{toolbarTitle}}</a>
     
     <a *ngFor="let item of toolbarNavItems" class="nav-item-link" [routerLink]="item.url" 
       [routerLinkActive]="item.activeCss">

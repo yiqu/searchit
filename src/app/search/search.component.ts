@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, NavigationEnd, RouterEvent } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { filter, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { BreadCrumb } from '../models/breadcrumb/breadcrumb.model';
 import { of, Observable } from 'rxjs';
+import { TitleService } from '../service/title.service';
 
 @Component({
   selector: 'search-home',
@@ -12,29 +13,16 @@ import { of, Observable } from 'rxjs';
 
 export class SearchHomeComponent implements OnInit {
 
-  breadcrumbs$: Observable<any>;
 
-  constructor(private route: ActivatedRoute, private router: Router) {
-    this.breadcrumbs$ = this.router.events.pipe(
-      filter(event => {
-        return event instanceof NavigationEnd;
-      }),
-      switchMap(event => this.buildBreadCrumb(event))
-    );
+  constructor(private route: ActivatedRoute, private router: Router,
+    private ts: TitleService) {
+    
+      this.ts.setAppTitle(this.route.snapshot.data.pageTitle);
   }
 
   ngOnInit() {
-    this.route.data.subscribe(
-      (val) => {
-      }
-    )
-
-    
   }
 
-  buildBreadCrumb(event) {
-    console.log(event)
-    return of([1,2,3]);
-  }
+  
 
 }

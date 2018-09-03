@@ -13,6 +13,7 @@ export class UserAuthService {
   public userInfo: User = new User();
   public userLoggedIn: boolean = false;
   public userLogInToggleButtonText: string;
+  public defaultTitle: string = "";
 
   /**
    * Constructor
@@ -82,6 +83,7 @@ export class UserAuthService {
 
   public updatePageTitle(user?: User): void {
     this.ts.setTitle(user.userName + environment.pageTitle);
+    this.defaultTitle = this.ts.getTitle();
   }
 
   public setUserLoggedIn(logged: boolean): void {

@@ -14,28 +14,28 @@ const searchRoutes: Routes = [
     path: '',
     component: SearchHomeComponent,
     data: {
-      pageTitle: 'Search'
+      pageTitle: 'Search Home'
     },
     children: [
       {
         path: 'projects',
         component: ProjectSearchComponent,
         data: {
-          pageTitle: 'Projects'
+          pageTitle: 'Search Projects'
         }
       },
       {
         path: 'users',
         component: UserSearchComponent,
         data: {
-          pageTitle: 'Users'
+          pageTitle: 'Search Users'
         }
       },
       {
         path: 'gists',
         component: GistSearchComponent,
         data: {
-          pageTitle: 'Gists'
+          pageTitle: 'Search Gists'
         }
       },
     ]

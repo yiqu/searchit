@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TitleService } from '../../service/title.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'gists-search',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class GistSearchComponent implements OnInit {
-  constructor() { }
+  constructor(private ts: TitleService, private route: ActivatedRoute) {
+    this.ts.setAppTitle(this.route.snapshot.data.pageTitle);
+   }
 
   ngOnInit() { }
 }

@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ApiService } from './service/base-api.service';
+import { UserAuthService } from './service/user-auth.service';
 
 // App Modules
 import { ToolbarModule } from './shared/toolbar/toolbar.module';
@@ -30,8 +31,8 @@ import { NotFoundModule } from './404/404.module'
 
   providers: [
     ApiService,
-    // Title service, updates document title dynamically
-    Title
+    Title,
+    UserAuthService
   ],
 
   bootstrap: [
