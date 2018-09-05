@@ -16,12 +16,20 @@
 .nav-item-link {
   color: #fff;
   font-weight: 600;
-  padding-left: 25px;
+  margin-left: 25px;
   line-height: 21px;
   text-decoration: none;
   text-decoration-line: none;
   text-decoration-style: solid;
 } 
+
+.nav-item-link.active {
+  border-bottom: 2px solid;
+}
+
+.nav-item-link.active:hover {
+  color: #fff;
+}
 
 .nav-item-link:hover {
   color: #a6a6a6;

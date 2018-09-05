@@ -3,3 +3,18 @@
   max-width: 60rem;
   margin: 1rem auto 1rem;
 }
+
+.text-blob {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.title {
+  color: #202124;
+  font-size: 2.3125rem;
+  font-weight: 400;
+  letter-spacing: -.03125rem;
+  line-height: 3rem;
+  margin-bottom: 32px;
+  margin-top: 2.5rem;
+}

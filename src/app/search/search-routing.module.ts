@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { SearchHomeComponent } from './search.component';
 import { ProjectSearchComponent } from './projects/projects.component';
 import { UserSearchComponent } from './users/users.component';
 import { GistSearchComponent } from './gists/gists.component';
+import { SearchLandingComponent } from './landing/search-landing.component';
 
 /**
  * Ths routing module, which display its content to search.component.html's <router-outlet>
@@ -38,6 +38,10 @@ const searchRoutes: Routes = [
           pageTitle: 'Search Gists'
         }
       },
+      {
+        path: '',
+        component: SearchLandingComponent,
+      }
     ]
   }
 ];

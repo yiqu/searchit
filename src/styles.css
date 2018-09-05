@@ -31,6 +31,23 @@ h1 {
 
 p {
   font-family: 'Open Sans', sans-serif;
+  letter-spacing: .01562rem;
+}
+
+a {
+  color: #1a73e8;
+  font-family: 'Roboto', Arial,Helvetica, sans-serif;
+  line-height: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #74aaf1;
+}
+
+a:visited {
+  color: #125bba;
+  background-color: transparent;
 }
 
 .med-font {

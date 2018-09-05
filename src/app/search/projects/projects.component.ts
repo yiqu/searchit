@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'projects-search',
   templateUrl: 'projects.component.html',
-  styleUrls: ['projects.component.css']
+  styleUrls: ['projects.component.css', '../search.component.css']
 })
 
 export class ProjectSearchComponent implements OnInit {

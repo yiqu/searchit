@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, ChildActivationEnd } from '@angular/router';
 import { filter, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { BreadCrumb } from '../models/breadcrumb/breadcrumb.model';
 import { of, Observable } from 'rxjs';
@@ -16,8 +16,7 @@ export class SearchHomeComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private router: Router,
     private ts: TitleService) {
-    
-      this.ts.setAppTitle(this.route.snapshot.data.pageTitle);
+      
   }
 
   ngOnInit() {
