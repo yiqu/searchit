@@ -1,0 +1,41 @@
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 50%;
+  width: 100px;
+  outline: black;
+  background-size: 100%, 100%;
+  background-image: none;
+}
+
+.carousel-control-next-icon:after {
+  content: '>';
+  font-size: 55px;
+  color: #3c4146;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: #3c4146;
+}
+
+.carousel-indicators .active {
+  background-color: #262626;
+}
+
+.carousel-indicators li {
+  background-color: #a6a6a6;
+}
+
+.carousel-search-home {
+  bottom: -30px;
+}
+
+.search-home-caro {
+  height: 350px;
+  width: 350px;
+}
+
+.search-home-img-wrapper {
+  text-align: center;
+}
