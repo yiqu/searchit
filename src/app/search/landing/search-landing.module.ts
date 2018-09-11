@@ -6,7 +6,8 @@ import { SearchLandingComponent } from './search-landing.component';
     SearchLandingComponent
   ],
 
-  imports: [],
+  imports: [
+  ],
   
   exports: [
   ],
