@@ -18,3 +18,9 @@
   margin-bottom: 32px;
   margin-top: 2.5rem;
 }
+
+.box-panel {
+  background-color: #fff;
+  border: 1px solid #d1d5da;
+  border-radius: 3px;
+}
