@@ -9,6 +9,7 @@ import { UserSearchModule } from './users/users.module';
 import { GistSearchModule } from './gists/gists.module';
 import { TitleService } from '../service/title.service'
 import { SearchLandingModule } from './landing/search-landing.module';
+import { FeedbackModule } from '../shared/feedback/feedback.module';
 
 /**
  * Landing Component Module
@@ -20,6 +21,7 @@ import { SearchLandingModule } from './landing/search-landing.module';
     ProjectSearchModule,
     UserSearchModule,
     GistSearchModule,
+    FeedbackModule,
     SearchLandingModule,
     SearchRoutingModule
   ],

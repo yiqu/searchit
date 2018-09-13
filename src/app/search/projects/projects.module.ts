@@ -1,4 +1,7 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { ProjectSearchComponent } from './projects.component';
 import { RightPanelModule } from '../right-panel/right-panel.module';
 
@@ -8,6 +11,9 @@ import { RightPanelModule } from '../right-panel/right-panel.module';
   ],
 
   imports: [
+    RouterModule,
+    FormsModule,
+    RouterModule,
     RightPanelModule
   ],
   

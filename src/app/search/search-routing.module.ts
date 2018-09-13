@@ -5,6 +5,7 @@ import { ProjectSearchComponent } from './projects/projects.component';
 import { UserSearchComponent } from './users/users.component';
 import { GistSearchComponent } from './gists/gists.component';
 import { SearchLandingComponent } from './landing/search-landing.component';
+import { FeedbackComponent } from '../shared/feedback/feedback.component';
 
 /**
  * Ths routing module, which display its content to search.component.html's <router-outlet>
