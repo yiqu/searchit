@@ -1,0 +1,29 @@
+<div class="container p-top osans">
+  <div class="row sfont">
+
+    <div class="col-5">
+      <div class="row mtop">
+        <div *ngFor="let fitem of footerItemsLeft" class="col">
+          <div class="text-center sfont">
+            {{fitem.text}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-2">
+      <div class="row">
+        <img class="logo center-block" src="assets/pics/daft.gif" alt="Footer Logo"> 
+      </div>
+    </div>
+
+    <div class="col-5">
+      <div class="row mtop">
+        <div *ngFor="let fitem of footerItemsRight" class="col-2 sfont">
+          {{fitem.text}}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

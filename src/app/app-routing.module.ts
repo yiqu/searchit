@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './404/404.component';
+import { FeedbackComponent } from './search/feedback/feedback.component';
+import { AboutComponent } from './about/about.component';
 
 
  //Root routes for app
 const routes: Routes = [
   {
-    path: 'search',
-    loadChildren: './search/search.module#SearchModule',
+    path: 'about', 
+    component: AboutComponent
   },
   { 
     path: '', 

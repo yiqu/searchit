@@ -6,10 +6,11 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ApiService } from './service/base-api.service';
 import { UserAuthService } from './service/user-auth.service';
-
-// App Modules
+import { SearchModule } from './search/search.module';
+import { AboutModule } from './about/about.module';
 import { ToolbarModule } from './shared/toolbar/toolbar.module';
 import { NotFoundModule } from './404/404.module'
+import { FooterModule } from './footer/footer.module';
 
 /**
  * Main app modules
@@ -23,8 +24,11 @@ import { NotFoundModule } from './404/404.module'
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    AboutModule,
     ToolbarModule,
     NotFoundModule,
+    FooterModule,
+    SearchModule,
     // routing module always last 
     AppRoutingModule
   ],

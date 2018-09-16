@@ -1,0 +1,9 @@
+.container-lg {
+  max-width: 1012px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.border-top {
+  border-top: 1px #e1e4e8 solid;
+}

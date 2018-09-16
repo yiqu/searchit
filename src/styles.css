@@ -15,6 +15,30 @@ html, body {
   margin: 1rem auto 1rem;
 }
 
+.wrapper {
+  min-height: calc(100% - 61px);
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -50px;
+}
+
+.push {
+  height: 50px;
+}
+
+.footer {
+  height: 50px;
+  margin-top: 40px;
+}
+
+.flex-justify-between {
+  justify-content: space-between;
+}
+
+.text-center {
+  text-align:center
+}
+
 .center {
   text-align: center;
   max-width: 50rem;
@@ -32,6 +56,10 @@ h1 {
 p {
   font-family: 'Open Sans', sans-serif;
   letter-spacing: .01562rem;
+}
+
+.osans {
+  font-family: 'Open Sans', sans-serif;
 }
 
 a {
