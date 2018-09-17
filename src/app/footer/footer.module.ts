@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './footer.component';
@@ -9,7 +10,8 @@ import { FooterComponent } from './footer.component';
   ],
 
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
 
   exports: [

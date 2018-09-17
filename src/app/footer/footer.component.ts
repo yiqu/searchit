@@ -10,19 +10,32 @@ export class FooterComponent implements OnInit {
 
   footerItemsLeft: FooterItem[] = [];
   footerItemsRight: FooterItem[] = [];
+  currentLogoIndex: string = "1.jpg";
 
   constructor() {
-    this.footerItemsLeft.push(new FooterItem("© 2018 YQ", ""));
-    this.footerItemsLeft.push(new FooterItem("Terms", ""));
-    this.footerItemsLeft.push(new FooterItem("Privacy", ""));
-    this.footerItemsLeft.push(new FooterItem("Security", ""));
-    this.footerItemsLeft.push(new FooterItem("Status", ""));
+    this.footerItemsLeft.push(new FooterItem("© 2018 YQ", null));
+    this.footerItemsLeft.push(new FooterItem("Terms", "terms"));
+    this.footerItemsLeft.push(new FooterItem("Privacy", "privacy"));
+    this.footerItemsLeft.push(new FooterItem("Security", "security"));
+    this.footerItemsLeft.push(new FooterItem("Status", "status"));
 
-    this.footerItemsRight.push(new FooterItem("About", ""));
-    this.footerItemsRight.push(new FooterItem("Tutorial", ""));
+    this.footerItemsRight.push(new FooterItem("About", "about"));
+    this.footerItemsRight.push(new FooterItem("Tutorial", "tutorial"));
   }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    this.onLogoClick();
+  }
+
+  onLogoClick() {
+    let logoIndex = this.getRandomInt(1, 10);
+    this.currentLogoIndex = (logoIndex === parseInt(this.currentLogoIndex) ? this.getRandomInt(1, 10): logoIndex) 
+      + (logoIndex === 2 ? '.gif':'.jpg');
+  }
+
+  getRandomInt(min, max){
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
 }
 
 export class FooterItem {

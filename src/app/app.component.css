@@ -7,3 +7,11 @@
 .border-top {
   border-top: 1px #e1e4e8 solid;
 }
+
+.container-text-white {
+  color: #fff;
+}
+
+.container-no-padding {
+  padding: 0px;
+}

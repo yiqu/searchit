@@ -36,7 +36,7 @@ html, body {
 }
 
 .text-center {
-  text-align:center
+  text-align: center
 }
 
 .center {
@@ -84,6 +84,15 @@ a:visited {
 
 .big-font {
   font-size: 18px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.no-padding-sides {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 /* Mateiral Icons */

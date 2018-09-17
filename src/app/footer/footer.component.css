@@ -1,10 +1,11 @@
 .logo {
   height: 50px;
   width: 50px;
+  cursor: pointer;
 }
 
 .p-top {
-  padding-top: 20px;
+  padding-top: 40px;
 }
 
 .center-block {

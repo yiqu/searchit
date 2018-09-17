@@ -12,7 +12,7 @@ import { TitleService } from '../../service/title.service';
   selector: 'app-toolbar',
   providers: [ UserAuthService ],
   templateUrl: 'toolbar.component.html',
-  styleUrls: ['toolbar.component.css']
+  styleUrls: ['toolbar.component.css','../../app.component.css']
 })
 
 export class ToolbarComponent implements OnInit {
