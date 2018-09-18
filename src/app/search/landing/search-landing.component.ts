@@ -13,7 +13,6 @@ import { TitleService } from '../../service/title.service';
 
 export class SearchLandingComponent implements OnInit {
 
-
   constructor(private route: ActivatedRoute, private router: Router,
     private ts: TitleService) {
       this.ts.setAppTitle(this.route.snapshot.data.pageTitle);
@@ -21,7 +20,5 @@ export class SearchLandingComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  
 
 }
