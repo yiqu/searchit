@@ -54,7 +54,7 @@ h1 {
 }
 
 p {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   letter-spacing: .01562rem;
 }
 
@@ -64,7 +64,6 @@ p {
 
 a {
   color: #1a73e8;
-  font-family: 'Roboto', Arial,Helvetica, sans-serif;
   line-height: inherit;
   text-decoration: none;
 }
