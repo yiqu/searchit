@@ -19,6 +19,10 @@
   color: #3c4146;
 }
 
+.width-align {
+  width: 3%;
+}
+
 .carousel-indicators .active {
   background-color: #262626;
 }

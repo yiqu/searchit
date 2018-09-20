@@ -11,12 +11,6 @@ import { FeedbackComponent } from './feedback/feedback.component';
  * Ths routing module, which display its content to search.component.html's <router-outlet>
  */
 const searchRoutes: Routes = [
-   //.stackblitz.io/search(popup:compose)
-  {
-    path: 'compose',
-    component: FeedbackComponent,
-    outlet: 'feedback'
-  },
   {
     path: 'search',
     component: SearchHomeComponent,

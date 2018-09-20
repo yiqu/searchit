@@ -1,9 +1,12 @@
 <div class="wrapper">
   <app-toolbar></app-toolbar>
-  <div class="container-lg">
+  <div class="container container-no-padding">
     <router-outlet></router-outlet>
   </div>
   <div class="push"></div>
 </div>
 
-<footer class="footer container-lg border-top"></footer>
+<router-outlet name="feedback"></router-outlet>
+Send Feedback 
+<a [routerLink]="['',{outlets:{feedback:['compose']}}]">Contact</a>
+<footer class="footer container border-top container-no-padding"></footer>

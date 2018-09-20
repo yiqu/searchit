@@ -7,6 +7,12 @@ import { AboutComponent } from './about/about.component';
 
  //Root routes for app
 const routes: Routes = [
+   //host.io/search(feedback:compose)
+   {
+    path: 'compose',
+    component: FeedbackComponent,
+    outlet: 'feedback'
+  },
   {
     path: 'about', 
     component: AboutComponent
