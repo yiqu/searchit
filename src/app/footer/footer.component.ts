@@ -19,8 +19,9 @@ export class FooterComponent implements OnInit {
     this.footerItemsLeft.push(new FooterItem("Security", "security"));
     this.footerItemsLeft.push(new FooterItem("Status", "status"));
 
-    this.footerItemsRight.push(new FooterItem("About", "about"));
+    this.footerItemsRight.push(new FooterItem("About", "/about"));
     this.footerItemsRight.push(new FooterItem("Tutorial", "tutorial"));
+    this.footerItemsRight.push(new FooterItem("Contact", ['',{outlets:{feedback:['compose']}}]));
   }
 
   ngOnInit() { 
@@ -40,9 +41,9 @@ export class FooterComponent implements OnInit {
 
 export class FooterItem {
   text: string;
-  url: string;
+  url: string | Array<any>;
 
-  constructor(text: string, url: string) {
+  constructor(text: string, url: string | Array<any>) {
     this.text = text;
     this.url = url;
   }
