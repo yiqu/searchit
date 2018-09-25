@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'users-search',
   templateUrl: 'users.component.html',
-  styleUrls: ['users.component.css']
+  styleUrls: ['users.component.css', '../search.component.css']
 })
 
 export class UserSearchComponent implements OnInit {

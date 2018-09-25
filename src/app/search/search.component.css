@@ -21,6 +21,7 @@
 
 .box-panel {
   background-color: #fff;
-  border: 1px solid #d1d5da;
+  border-left: 1px solid #d1d5da;
   border-radius: 3px;
+  word-wrap: break-word;
 }
