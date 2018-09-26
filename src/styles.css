@@ -16,19 +16,11 @@ html, body {
 }
 
 .wrapper {
-  min-height: calc(100% - 61px);
-  /* Equal to height of footer */
-  /* But also accounting for potential margin-bottom of last child */
-  margin-bottom: -50px;
-}
-
-.push {
-  height: 50px;
+  min-height: calc(100vh - 70px);
 }
 
 .footer {
   height: 50px;
-  margin-top: 40px;
 }
 
 .flex-justify-between {
