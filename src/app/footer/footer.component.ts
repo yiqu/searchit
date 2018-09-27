@@ -29,9 +29,9 @@ export class FooterComponent implements OnInit {
   }
 
   onLogoClick() {
-    let logoIndex = this.getRandomInt(1, 10);
-    this.currentLogoIndex = (logoIndex === parseInt(this.currentLogoIndex) ? this.getRandomInt(1, 10): logoIndex) 
-      + (logoIndex === 2 ? '.gif':'.jpg');
+    let logoIndex = this.getRandomInt(1, 11);
+    this.currentLogoIndex = (logoIndex === parseInt(this.currentLogoIndex) ? this.getRandomInt(1, 11): logoIndex) 
+      + ((logoIndex === 2 || logoIndex === 11) ? '.gif':'.jpg');
   }
 
   getRandomInt(min, max){
