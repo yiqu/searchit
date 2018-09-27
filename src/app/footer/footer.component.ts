@@ -17,13 +17,11 @@ export class FooterComponent implements OnInit {
     this.footerItemsLeft.push(new FooterItem("Terms", "terms"));
     this.footerItemsLeft.push(new FooterItem("Privacy", "privacy"));
     this.footerItemsLeft.push(new FooterItem("Security", "security"));
-    this.footerItemsLeft.push(new FooterItem("Status", "status"));
 
     this.footerItemsRight.push(new FooterItem("About", "/about"));
+    this.footerItemsRight.push(new FooterItem("Status", "status"));
     this.footerItemsRight.push(new FooterItem("Tutorial", "tutorial"));
     this.footerItemsRight.push(new FooterItem("Contact", ['',{outlets:{feedback:['compose']}}]));
-    this.footerItemsRight.push(new FooterItem(" ", ""));
-    this.footerItemsRight.push(new FooterItem(" ", ""));
   }
 
   ngOnInit() { 
