@@ -7,7 +7,30 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AboutComponent implements OnInit {
-  constructor() { }
 
-  ngOnInit() { }
+  public changelog: Array<any>;
+
+  constructor() {
+    // change log information array
+    this.changelog = [
+      {
+        version: '0.1.0',
+        date: new Date('09/27/18'),
+        changes: 'Init. creation of the project.Init. creation of the project.Init. creation of the project.' +
+        'Init. creation of the project.Init. creation of the project.Init. creation of the project.Init. creation of the project.'+
+        'Init. creation of the project.Init. creation of the project.Init. creation of the project.',
+        externalLink: undefined,
+        linkUrl: null
+      },
+      {
+        version: '0.1.1',
+        date: new Date('09/27/18'),
+        changes: 'Routes',
+        externalLink: undefined,
+        linkUrl: null
+      },
+    ];
+  }
+
+  ngOnInit() {}
 }

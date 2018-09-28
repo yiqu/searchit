@@ -1,1 +1,12 @@
-About
+<h2 class="about-title container-no-padding p-top">CHANGE LOG</h2>
+<div *ngFor="let change of changelog">
+  <h4>
+    <span class="version">v {{change.version}}</span> 
+    <span class="date" style="padding-left: 10px;">{{change.date | date}}</span>
+  </h4>
+  <p class="about-text" mat-line>{{change.changes}}
+    <a *ngIf="change.externalLink !== undefined" [href]="change.linkUrl" target="_blank">
+      {{change.externalLink}}
+    </a>.
+  </p>
+</div>

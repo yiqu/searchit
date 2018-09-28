@@ -2,11 +2,9 @@
   <div class="row sfont">
     <div class="col-5">
       <div class="row mtop">
-        <div *ngFor="let fitem of footerItemsLeft" class="col">
-          <div class="text-center">
-            <a *ngIf="fitem.url"[routerLink]="fitem.url" class="sfont">{{fitem.text}}</a>
-            <span *ngIf="!fitem.url" class="nowrap sfont">{{fitem.text}}</span>
-          </div>
+        <div *ngFor="let fitem of footerItemsLeft" class="col text-center">
+          <a *ngIf="fitem.url"[routerLink]="fitem.url" class="sfont">{{fitem.text}}</a>
+          <span *ngIf="!fitem.url" class="nowrap sfont">{{fitem.text}}</span>
         </div>
       </div>
     </div>
@@ -20,7 +18,7 @@
 
     <div class="col-5">
       <div class="row mtop">
-        <div *ngFor="let fitem of footerItemsRight" class="col">
+        <div *ngFor="let fitem of footerItemsRight" class="col text-center">
             <a [routerLink]="fitem.url" class="sfont">{{fitem.text}}</a>
         </div>
         

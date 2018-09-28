@@ -44,6 +44,10 @@ h1 {
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
 }
+ 
+h2, h4 {
+  font-family: 'Roboto', sans-serif;
+}
 
 p {
   font-family: 'Roboto', sans-serif;
@@ -84,6 +88,10 @@ a:visited {
 .container-no-padding {
   padding-left: 0px !important;
   padding-right: 0px !important;
+}
+
+.p-top {
+  padding-top: 30px;
 }
 
 /* Mateiral Icons */

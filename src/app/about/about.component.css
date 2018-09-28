@@ -1,0 +1,19 @@
+.date {
+  color: #008000;
+}
+
+.version {
+  font-weight: 600;
+}
+
+.about-text {
+  color: #737373;
+  padding-top: 3px !important;
+  white-space: normal !important;
+}
+
+.about-title {
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: underline;
+}
