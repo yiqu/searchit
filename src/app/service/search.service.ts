@@ -13,7 +13,7 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class SearchService {
 
-  baseApi: string = "github";
+  githubBaseApi: string = "github";
   
   constructor() { }
 }
