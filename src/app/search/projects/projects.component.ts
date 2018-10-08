@@ -18,6 +18,7 @@ export class ProjectSearchComponent implements OnInit {
     }
 
   ngOnInit() {
-    console.log(this.ss.baseApi)
+    console.log(this.ss.githubBaseApi);
+    
   }
 }
