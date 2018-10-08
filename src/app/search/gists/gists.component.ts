@@ -17,6 +17,5 @@ export class GistSearchComponent implements OnInit {
    }
 
   ngOnInit() { 
-    console.log(this.ss.baseApi)
   }
 }
