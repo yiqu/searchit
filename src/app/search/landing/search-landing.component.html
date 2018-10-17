@@ -1,52 +1,44 @@
-<h1 class="center title">Explore Github</h1>
+<h1 class="center title">Explore {{exploreTitle}}</h1>
 
-<div id="searchHomeCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+<div id="searchHomeCarousel" class="carousel slide" data-ride="carousel" data-interval="false" #carouselExplore>
   <ol class="carousel-indicators carousel-search-home">
     <li data-target="#searchHomeCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#searchHomeCarousel" data-slide-to="1"></li>
     <li data-target="#searchHomeCarousel" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner">
-    <div class="carousel-item active">
+    <div class="carousel-item active" title="repositories">
       <div class="search-home-img-wrapper">
         <img class="search-home-caro" src="assets/pics/1.jpg" alt="Repo Coder Cat"> 
       </div>
       <p class="text-blob"><a target="_blank" href="https://github.com">GitHub</a> is a development platform built on Git. 
         Developers can host and review code, manage projects, and build software alongside 28 million other 
-        software enthusiasts. 
-      </p>
-      <p class="text-blob"><a target="_blank" href="https://github.com">GitHub</a> is a development platform built on Git. 
-        Developers can host and review code, manage projects, and build software alongside 28 million other 
-        software enthusiasts. 
-      </p>
-      <p class="text-blob"><a target="_blank" href="https://github.com">GitHub</a> is a development platform built on Git. 
-        Developers can host and review code, manage projects, and build software alongside 28 million other 
-        software enthusiasts. 
+        software enthusiasts. This is the repositories
       </p>
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item" title="users">
       <div class="search-home-img-wrapper">
         <img class="search-home-caro" src="assets/pics/4.jpg" alt="Repo Coder Cat"> 
       </div>
       <p class="text-blob"><a target="_blank" href="https://github.com">GitHub</a> is a development platform built on Git. 
         Developers can host and review code, manage projects, and build software alongside 28 million other 
-        software enthusiasts. 
+        software enthusiasts. This is Users
       </p>
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item" title="gists">
       <div class="search-home-img-wrapper">
         <img class="search-home-caro" src="assets/pics/6.jpg" alt="Repo Coder Cat"> 
       </div>
       <p class="text-blob"><a target="_blank" href="https://github.com">GitHub</a> is a development platform built on Git. 
         Developers can host and review code, manage projects, and build software alongside 28 million other 
-        software enthusiasts. 
+        software enthusiasts. This is Gists
       </p>
     </div>
   </div>
   <a class="carousel-control-prev width-align" href="#searchHomeCarousel" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span #previous class="carousel-control-prev-icon" aria-hidden="true" (click)="exploreToggle(carouselExplore)"></span>
   </a>
   <a class="carousel-control-next width-align" href="#searchHomeCarousel" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span #next class="carousel-control-next-icon" aria-hidden="true" (click)="exploreToggle(carouselExplore)"></span>
   </a>
 </div>

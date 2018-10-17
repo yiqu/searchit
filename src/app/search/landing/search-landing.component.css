@@ -19,6 +19,11 @@
   color: #3c4146;
 }
 
+.carousel-item-next, .carousel-item-prev, .carousel-item.active {
+  display: block;
+  transition: transform .2s ease,-webkit-transform .2s ease;
+}
+
 .width-align {
   width: 3%;
 }
