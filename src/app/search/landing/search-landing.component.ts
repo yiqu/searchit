@@ -30,6 +30,11 @@ export class SearchLandingComponent implements AfterViewInit, OnInit  {
 
   }
 
+  /**
+   * After view init. Set the click action for carousel
+   * Set a delay of 220ms due to transistion effect of .2s set in the .css file.
+   * Reason to set >.2s is due to html title is being used as the exploreTitle
+   */
   ngAfterViewInit() {
     const carouselElement$ = fromEvent(this.carouselNext.nativeElement, 'click');
     const carousel$ = carouselElement$.pipe(
@@ -41,9 +46,14 @@ export class SearchLandingComponent implements AfterViewInit, OnInit  {
     );
     carousel$.subscribe((val) => {
       this.exploreTitle = this.getCurrentCarouselTitle();
+      console.log(this.exploreTitle)
     });
   }
 
+  /**
+   * On Init
+   * Set the init carousel explore title
+   */
   ngOnInit() {
     this.exploreTitle = this.getCurrentCarouselTitle();
   }
@@ -56,6 +66,9 @@ export class SearchLandingComponent implements AfterViewInit, OnInit  {
   exploreToggle(element) {
   } 
 
+  /**
+   * Using jquery to grab the carousel's current title from the html element
+   */
   getCurrentCarouselTitle() {
     return $(this.carouselElement.nativeElement).find(".active").get()[1]['title'];
   }
