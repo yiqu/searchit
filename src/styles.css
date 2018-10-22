@@ -10,10 +10,6 @@ html, body {
   height: 100%;
 }
 
-* {
-  font-size: 14px;
-}
-
 .wrap {
   max-width: 50rem;
   margin: 1rem auto 1rem;
