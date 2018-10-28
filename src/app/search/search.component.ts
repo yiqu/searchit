@@ -22,6 +22,4 @@ export class SearchHomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  
-
 }
