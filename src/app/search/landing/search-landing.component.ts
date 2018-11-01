@@ -37,16 +37,17 @@ export class SearchLandingComponent implements AfterViewInit, OnInit  {
    */
   ngAfterViewInit() {
     const carouselElement$ = fromEvent(this.carouselNext.nativeElement, 'click');
+    const carouselElementPrev$ = fromEvent(this.carouselPrevious.nativeElement, 'click');
     const carousel$ = carouselElement$.pipe(
       switchMap(val => {
         return of("").pipe(
-          delay(220),
+          delay(300),
         );
       })
     );
+    
     carousel$.subscribe((val) => {
       this.exploreTitle = this.getCurrentCarouselTitle();
-      console.log(this.exploreTitle)
     });
   }
 
@@ -70,7 +71,7 @@ export class SearchLandingComponent implements AfterViewInit, OnInit  {
    * Using jquery to grab the carousel's current title from the html element
    */
   getCurrentCarouselTitle() {
-    return $(this.carouselElement.nativeElement).find(".active").get()[1]['title'];
+    return $(this.carouselElement.nativeElement).find(".active").get()[1]['id'];
   }
 
 }

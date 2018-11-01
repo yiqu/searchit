@@ -4,7 +4,7 @@
   software enthusiasts. 
 </h1>
 
-<h1 class="center title">Explore {{exploreTitle}}</h1>
+<h1 class="center title">Explore {{exploreTitle | capitalizeFirst}}</h1>
 
 <div id="searchHomeCarousel" class="carousel slide" data-ride="carousel" data-interval="false" #carouselExplore>
   <ol class="carousel-indicators carousel-search-home">
@@ -13,39 +13,47 @@
     <li data-target="#searchHomeCarousel" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner">
-    <div class="carousel-item active" title="repositories">
+    <div class="carousel-item active" id="repositories">
       <div class="search-home-img-wrapper">
         <img class="search-home-caro" src="assets/pics/1.jpg" alt="Repo Coder Cat"> 
       </div>
-        <p class="text-blob">A repository is like a folder for your project. Your project's repository contains all of 
-          your project's files and stores each file's revision history.
-        <p class="text-blob">You can own a repository individually, and give other people collaborator access to your 
-          repository so that they can collaborate on your project.
-        You can also share ownership of a repository with other people in an organization, 
-        and give organization members access permissions to collaborate on your repository.
-        <p class="text-blob">Repositories can be public or private. Public repositories are visible to everyone. 
-          Only the owner and collaborators can view or contribute to a private repository.
-        <p class="text-blob">Each person and organization can own unlimited public repositories and invite an 
-          unlimited number of collaborators to the repository.
-        <p class="text-blob">You can collaborate on your project with others using your 
-          repository's issues, pull requests, and project boards.
+      <p class="text-blob">A repository is like a folder for your project. Your project's repository contains all of 
+        your project's files and stores each file's revision history.</p>
+      <p class="text-blob">You can own a repository individually, and give other people collaborator access to your 
+        repository so that they can collaborate on your project.
+      You can also share ownership of a repository with other people in an organization, 
+      and give organization members access permissions to collaborate on your repository.</p>
+      <p class="text-blob">Repositories can be public or private. Public repositories are visible to everyone. 
+        Only the owner and collaborators can view or contribute to a private repository.</p>
+      <p class="text-blob">Each person and organization can own unlimited public repositories and invite an 
+        unlimited number of collaborators to the repository.</p>
+      <p class="text-blob">You can collaborate on your project with others using your 
+        repository's issues, pull requests, and project boards.</p>
     </div>
-    <div class="carousel-item" title="users">
+    <div class="carousel-item" id="users">
       <div class="search-home-img-wrapper">
         <img class="search-home-caro" src="assets/pics/4.jpg" alt="Repo Coder Cat"> 
       </div>
-      <p class="text-blob"><a target="_blank" href="https://github.com">GitHub</a> is a development platform built on Git. 
-        Developers can host and review code, manage projects, and build software alongside 28 million other 
-        software enthusiasts. This is Users
+      <p class="text-blob">
+        Every person who uses GitHub has their own user account.
+      </p>
+      <p class="text-blob">   
+        Organizations are shared accounts where groups of people can collaborate across many projects at once. 
+        Owners and administrators can manage member access to the organization's data and projects with 
+        sophisticated security and administrative features.
       </p>
     </div>
-    <div class="carousel-item" title="gists">
+    <div class="carousel-item" id="gists">
       <div class="search-home-img-wrapper">
         <img class="search-home-caro" src="assets/pics/6.jpg" alt="Repo Coder Cat"> 
       </div>
-      <p class="text-blob"><a target="_blank" href="https://github.com">GitHub</a> is a development platform built on Git. 
-        Developers can host and review code, manage projects, and build software alongside 28 million other 
-        software enthusiasts. This is Gists
+      <p class="text-blob">
+      With gists, you can share single files, parts of files, and full applications with other people. 
+      Directories can't be shared. You can access your gists at <a target="_blank" href="https://gist.github.com">https://gist.github.com</a>.
+      </p>
+      <p class="text-blob">
+      Every gist is a Git repository, which means that it can be forked and cloned. 
+      The gist editor is powered by CodeMirror.
       </p>
     </div>
   </div>

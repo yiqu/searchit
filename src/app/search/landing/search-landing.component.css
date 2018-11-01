@@ -21,7 +21,7 @@
 
 .carousel-item-next, .carousel-item-prev, .carousel-item.active {
   display: block;
-  transition: transform .2s ease,-webkit-transform .2s ease;
+  transition: transform .1s ease,-webkit-transform .1s ease;
 }
 
 .width-align {
