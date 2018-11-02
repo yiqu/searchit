@@ -27,7 +27,6 @@ export class SearchLandingComponent implements AfterViewInit, OnInit  {
   constructor(private route: ActivatedRoute, private router: Router,
     private ts: TitleService) {
       this.ts.setAppTitle(this.route.snapshot.data.pageTitle);
-
   }
 
   /**
