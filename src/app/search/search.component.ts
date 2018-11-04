@@ -13,7 +13,6 @@ import { TitleService } from '../service/title.service';
 
 export class SearchHomeComponent implements OnInit {
 
-
   constructor(private route: ActivatedRoute, private router: Router,
     private ts: TitleService) {
       
