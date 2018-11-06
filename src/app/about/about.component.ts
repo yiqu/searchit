@@ -29,6 +29,13 @@ export class AboutComponent implements OnInit {
         externalLink: undefined,
         linkUrl: null
       },
+      {
+        version: '0.1.1',
+        date: new Date('10/30/18'),
+        changes: 'Search landing page carousel. Added jQuery',
+        externalLink: undefined,
+        linkUrl: null
+      },
     ];
   }
 
