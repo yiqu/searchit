@@ -16,9 +16,7 @@ export class AboutComponent implements OnInit {
       {
         version: '0.1.0',
         date: new Date('09/27/18'),
-        changes: 'Init. creation of the project.Init. creation of the project.Init. creation of the project.' +
-        'Init. creation of the project.Init. creation of the project.Init. creation of the project.Init. creation of the project.'+
-        'Init. creation of the project.Init. creation of the project.Init. creation of the project.',
+        changes: 'Init. creation of the project.',
         externalLink: undefined,
         linkUrl: null
       },
