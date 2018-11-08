@@ -23,7 +23,6 @@ export class ToolbarComponent implements OnInit {
   toolbarTitle: string = "Github Search";
   menuYPosition: string = "below";
   menuOverlap: boolean = false;
-
   toolbarNavItems: NavItem[];
 
   /**
@@ -33,10 +32,12 @@ export class ToolbarComponent implements OnInit {
    */
   constructor(public uas: UserAuthService, private ts: TitleService, 
     private router: Router, private route: ActivatedRoute) {
-    let projects = new NavItem(["search", "projects"], "active", "Projects");
-    let users = new NavItem(["search", "users"], "active", "Users");
-    let gists = new NavItem(["search", "gists"], "active", "Gists");
-    this.toolbarNavItems = [projects, users, gists];
+
+      // in html template, [routerLink]=['path', 'path2'] which is /path/path2
+      let projects = new NavItem(["search", "projects"], "active", "Projects");
+      let users = new NavItem(["search", "users"], "active", "Users");
+      let gists = new NavItem(["search", "gists"], "active", "Gists");
+      this.toolbarNavItems = [projects, users, gists];
   }
 
   /**
