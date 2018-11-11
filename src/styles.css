@@ -25,6 +25,7 @@ html, body {
 
 .gray-text {
   color: #808080;
+  font-size: 20px;
 }
 
 .flex-justify-between {
@@ -41,12 +42,11 @@ html, body {
 }
 
 h1 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 20px;
+  font-family: 'Roboto', sans-serif !important;
 }
  
 h2, h4 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif !important;
 }
 
 p {
